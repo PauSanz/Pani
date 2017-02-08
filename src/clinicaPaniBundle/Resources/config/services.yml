@@ -1,0 +1,4 @@
+services:
+#    clinica_pani.example:
+#        class: clinicaPaniBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
