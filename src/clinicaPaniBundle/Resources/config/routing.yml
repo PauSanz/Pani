@@ -1,0 +1,7 @@
+clinica_pani_homepage:
+    path:     /
+    defaults: { _controller: clinicaPaniBundle:Default:index }
+    
+clinica_pani_vistametge:
+    path:     /vmetge
+    defaults: { _controller: clinicaPaniBundle:Metges:vistaMetge }

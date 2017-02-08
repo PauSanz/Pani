@@ -1,0 +1,22 @@
+{% block title %}Metges{% endblock %}
+{% block page_content %}
+    <h4>Test</h4>
+    <table id="mytable" class="table table-bordred table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+            {% for metge in Metges %}
+                <tr>
+                    <th>{{ metge.id }}</th>
+                    <td>{{ metge.nom }}</td>
+                    <td>{{ metge.cognom }}</td>
+                    <td>{{ metge.dni }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
