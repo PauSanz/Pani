@@ -67,3 +67,12 @@ Enjoy!
 [11]: https://symfony.com/doc/3.2/logging.html
 [12]: https://symfony.com/doc/3.2/assetic/asset_management.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPTES D'USUARIS >>>>>>>>>>>>>>>>>>>>>
+Administrador:
+        user: pau
+        pw: 1234 (Rol: 99)
+Consultor:
+        user: dani
+        pw: 1234 (Rol 77)
