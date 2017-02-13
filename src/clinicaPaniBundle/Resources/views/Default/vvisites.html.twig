@@ -1,0 +1,28 @@
+{% block title %}Visites{% endblock %}
+{% block page_content %}
+    <h4>Test</h4>
+    <table id="mytable" class="table table-bordred table-striped">
+        <thead>
+        <th>REF</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Tipus de visita</th>
+        <th>Descripció</th>
+        <th>Metge visitat</th>
+        <th>Pacient visitat</th>
+    </thead>
+    <tbody>
+        {% for visites in Visites %}
+            <tr>
+                <td>{{ visites.ref }}</td>
+                <td>{{ visites.data|date('Y-m-d') }}</td>
+                <td>{{ visites.hora|date('H:i:s') }}</td>
+                <td>{{ visites.tipusvisita.tipus }}</td>
+                <td>{{ visites.descripcio }}</td>                
+                <td>{{ visites.metgevisitat.dni }}</td>
+                <td>{{ visites.pacientvisitat.dni }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
