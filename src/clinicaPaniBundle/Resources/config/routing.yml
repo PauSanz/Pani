@@ -5,3 +5,7 @@ clinica_pani_homepage:
 clinica_pani_vistametge:
     path:     /vmetge
     defaults: { _controller: clinicaPaniBundle:Metges:vistaMetge }
+    
+clinica_pani_vistavisites:
+    path:     /vvisites
+    defaults: { _controller: clinicaPaniBundle:Visites:vistaVisita }

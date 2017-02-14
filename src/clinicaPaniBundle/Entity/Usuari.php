@@ -7,51 +7,42 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Usuari
  *
- * @ORM\Table(name="usuari")
- * @ORM\Entity(repositoryClass="clinicaPaniBundle\Repository\UsuariRepository")
+ * @ORM\Table(name="usuari", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_68CC94FF68CC94FF", columns={"usuari"})})
+ * @ORM\Entity
  */
 class Usuari
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="usuari", type="string", length=255, unique=true)
+     * @ORM\Column(name="usuari", type="string", length=255, nullable=false)
      */
     private $usuari;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pass", type="string", length=255)
+     * @ORM\Column(name="pass", type="string", length=255, nullable=false)
      */
     private $pass;
 
     /**
-     * @var int
+     * @var integer
      *
-     * @ORM\Column(name="rol", type="integer")
+     * @ORM\Column(name="rol", type="integer", nullable=false)
      */
     private $rol;
 
-
     /**
-     * Get id
+     * @var integer
      *
-     * @return int
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set usuari
@@ -118,11 +109,20 @@ class Usuari
     /**
      * Get rol
      *
-     * @return int
+     * @return integer
      */
     public function getRol()
     {
         return $this->rol;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
