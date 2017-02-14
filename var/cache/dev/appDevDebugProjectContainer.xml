@@ -461,7 +461,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>uUvRPN5rxQ</argument>
                 <argument>0</argument>
-                <argument>PdihqT8EjxddXDPsE84Bn8</argument>
+                <argument>nrk+4ll9Q8URRbkw8nteao</argument>
                 <argument>C:\xampp\htdocs\clinica-pani\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -629,7 +629,7 @@
           <tag name="monolog.logger" channel="cache"/>
           <argument>jjEZoltvoN</argument>
           <argument>null</argument>
-          <argument>PdihqT8EjxddXDPsE84Bn8</argument>
+          <argument>nrk+4ll9Q8URRbkw8nteao</argument>
           <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
           <factory class="Symfony\Component\PropertyAccess\PropertyAccessor" method="createCache"/>
         </service>
@@ -650,7 +650,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>S8MYzUL9eC</argument>
       <argument>0</argument>
-      <argument>PdihqT8EjxddXDPsE84Bn8</argument>
+      <argument>nrk+4ll9Q8URRbkw8nteao</argument>
       <argument>C:\xampp\htdocs\clinica-pani\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -660,7 +660,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>cX8Q7kgxT5</argument>
       <argument>0</argument>
-      <argument>PdihqT8EjxddXDPsE84Bn8</argument>
+      <argument>nrk+4ll9Q8URRbkw8nteao</argument>
       <argument>C:\xampp\htdocs\clinica-pani\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1653,7 +1653,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>589b3ebf1ac6f5.88615549</argument>
+            <argument>58a1d285e166b4.76886870</argument>
           </service>
         </argument>
       </argument>
@@ -1801,7 +1801,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>589b3ebf1ac6f5.88615549</argument>
+            <argument>58a1d285e166b4.76886870</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2278,11 +2278,13 @@
               <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
-                      <argument type="service" id="annotations.reader"/>
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument>C:\xampp\htdocs\clinica-pani\src\clinicaPaniBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\clinica-pani\src\clinicaPaniBundle\Resources\config\doctrine">clinicaPaniBundle\Entity</argument>
                       </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
                     </service>
                   </argument>
                   <argument>clinicaPaniBundle\Entity</argument>

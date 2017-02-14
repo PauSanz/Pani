@@ -8,81 +8,41 @@ use Doctrine\ORM\Mapping as ORM;
  * Metge
  *
  * @ORM\Table(name="metge")
- * @ORM\Entity(repositoryClass="clinicaPaniBundle\Repository\MetgeRepository")
+ * @ORM\Entity
  */
 class Metge
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="dni", type="string", length=255, unique=true)
-     */
-    private $dni;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cognom", type="string", length=255)
+     * @ORM\Column(name="cognom", type="string", length=255, nullable=false)
      */
     private $cognom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="especialitat", type="string", length=255)
+     * @ORM\Column(name="especialitat", type="string", length=255, nullable=false)
      */
     private $especialitat;
 
-
     /**
-     * Get id
+     * @var string
      *
-     * @return int
+     * @ORM\Column(name="dni", type="string", length=9)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $dni;
 
-    /**
-     * Set dni
-     *
-     * @param string $dni
-     *
-     * @return Metge
-     */
-    public function setDni($dni)
-    {
-        $this->dni = $dni;
 
-        return $this;
-    }
-
-    /**
-     * Get dni
-     *
-     * @return string
-     */
-    public function getDni()
-    {
-        return $this->dni;
-    }
 
     /**
      * Set nom
@@ -155,5 +115,14 @@ class Metge
     {
         return $this->especialitat;
     }
-}
 
+    /**
+     * Get dni
+     *
+     * @return string
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+}
