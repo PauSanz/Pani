@@ -115,9 +115,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         if (0 === strpos($pathinfo, '/v')) {
-            // clinica_pani_vistametge
-            if ($pathinfo === '/vmetge') {
-                return array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::vistaMetgeAction',  '_route' => 'clinica_pani_vistametge',);
+            if (0 === strpos($pathinfo, '/vmetge')) {
+                // clinica_pani_vistametge
+                if ($pathinfo === '/vmetge') {
+                    return array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::vistaMetgeAction',  '_route' => 'clinica_pani_vistametge',);
+                }
+
+                // clinica_pani_vistapacient
+                if ($pathinfo === '/vmetge') {
+                    return array (  '_controller' => 'clinicaPaniBundle:Pacients:vistaPacient',  '_route' => 'clinica_pani_vistapacient',);
+                }
+
+                // clinica_pani_vistavisita
+                if ($pathinfo === '/vmetge') {
+                    return array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::vistaVstaAction',  '_route' => 'clinica_pani_vistavisita',);
+                }
+
             }
 
             // clinica_pani_vistavisites
