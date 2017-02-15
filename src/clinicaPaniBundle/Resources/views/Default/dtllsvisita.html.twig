@@ -1,0 +1,23 @@
+{% block title %}Clinica Pani{% endblock %}
+{% block page_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h4 class="">{{ ref }}</h4>
+            </div>
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <p>{{ visita.ref }}</p>
+                    <p>{{ visita.data|date('d-m-Y') }}</p>
+                    <p>{{ visita.hora|date('H:i:s') }}</p>
+                    <p>{{ visita.tipusvisita.tipus }}</p>
+                    <p>{{ visita.descripcio }}</p>
+                    <p>{{ visita.metgevisitat.nom }}</p>
+                    <p>{{ visita.metgevisitat.cognom }}</p>
+                    <p>{{ visita.metgevisitat.dni }}</p>
+                    <p>{{ visita.pacientvisitat.nom }}</p>                    
+                    <p>{{ visita.pacientvisitat.cognom }}</p>
+                    <p>{{ visita.pacientvisitat.dni }}</p>
+                </div>
+        </div>
+    </div>
+{% endblock %}

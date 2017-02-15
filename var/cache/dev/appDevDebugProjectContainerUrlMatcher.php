@@ -127,6 +127,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // clinica_pani_detallsvisita
+        if (0 === strpos($pathinfo, '/dtllsvisita') && preg_match('#^/dtllsvisita/(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_detallsvisita')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::veureDetallsAction',));
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

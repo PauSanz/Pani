@@ -17,50 +17,50 @@ class __TwigTemplate_885df6c31270593ea3e1c3a7aea44d43c73b3fa555a37d9c30bede9d290
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_542af5be3f976bb4cdb8e077add0c15de0430e1cc5691c874dbacdc922610c68 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_542af5be3f976bb4cdb8e077add0c15de0430e1cc5691c874dbacdc922610c68->enter($__internal_542af5be3f976bb4cdb8e077add0c15de0430e1cc5691c874dbacdc922610c68_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clinicaPaniBundle:Default:vvisites.html.twig"));
+        $__internal_bea3d03c0ae6af70128f0c1638aa18506210028945f74715d12acf270c274fb9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bea3d03c0ae6af70128f0c1638aa18506210028945f74715d12acf270c274fb9->enter($__internal_bea3d03c0ae6af70128f0c1638aa18506210028945f74715d12acf270c274fb9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clinicaPaniBundle:Default:vvisites.html.twig"));
 
-        $__internal_31dd1060047c1ab510eec7eab6e679342bdc9417fd8431ca9836f7b36aa8cf3d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_31dd1060047c1ab510eec7eab6e679342bdc9417fd8431ca9836f7b36aa8cf3d->enter($__internal_31dd1060047c1ab510eec7eab6e679342bdc9417fd8431ca9836f7b36aa8cf3d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clinicaPaniBundle:Default:vvisites.html.twig"));
+        $__internal_b17fbc33f6ec03b47f3022ce3e865c30997b74a230f19f2c0c66d4588b75d264 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b17fbc33f6ec03b47f3022ce3e865c30997b74a230f19f2c0c66d4588b75d264->enter($__internal_b17fbc33f6ec03b47f3022ce3e865c30997b74a230f19f2c0c66d4588b75d264_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "clinicaPaniBundle:Default:vvisites.html.twig"));
 
         // line 1
         $this->displayBlock('title', $context, $blocks);
         // line 2
         $this->displayBlock('page_content', $context, $blocks);
         
-        $__internal_542af5be3f976bb4cdb8e077add0c15de0430e1cc5691c874dbacdc922610c68->leave($__internal_542af5be3f976bb4cdb8e077add0c15de0430e1cc5691c874dbacdc922610c68_prof);
+        $__internal_bea3d03c0ae6af70128f0c1638aa18506210028945f74715d12acf270c274fb9->leave($__internal_bea3d03c0ae6af70128f0c1638aa18506210028945f74715d12acf270c274fb9_prof);
 
         
-        $__internal_31dd1060047c1ab510eec7eab6e679342bdc9417fd8431ca9836f7b36aa8cf3d->leave($__internal_31dd1060047c1ab510eec7eab6e679342bdc9417fd8431ca9836f7b36aa8cf3d_prof);
+        $__internal_b17fbc33f6ec03b47f3022ce3e865c30997b74a230f19f2c0c66d4588b75d264->leave($__internal_b17fbc33f6ec03b47f3022ce3e865c30997b74a230f19f2c0c66d4588b75d264_prof);
 
     }
 
     // line 1
     public function block_title($context, array $blocks = array())
     {
-        $__internal_0c6d87b67920d19a24be2f16d3e07f6099d51e8d5c8eea43d6a720a5eee3a743 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0c6d87b67920d19a24be2f16d3e07f6099d51e8d5c8eea43d6a720a5eee3a743->enter($__internal_0c6d87b67920d19a24be2f16d3e07f6099d51e8d5c8eea43d6a720a5eee3a743_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_10f72a71ce9f86b0c28011513c6e79d275d402a4018d7864e6dd98c5fd15d888 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_10f72a71ce9f86b0c28011513c6e79d275d402a4018d7864e6dd98c5fd15d888->enter($__internal_10f72a71ce9f86b0c28011513c6e79d275d402a4018d7864e6dd98c5fd15d888_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_8b71a1cc736f02e60a88f3c6c45142e7756edf11e1560e595304f13692444e96 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8b71a1cc736f02e60a88f3c6c45142e7756edf11e1560e595304f13692444e96->enter($__internal_8b71a1cc736f02e60a88f3c6c45142e7756edf11e1560e595304f13692444e96_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f091ff8bdbb54a1b8317bdf573f1bd9f1afb1594ae5dfbffdfdabe064f866e6e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f091ff8bdbb54a1b8317bdf573f1bd9f1afb1594ae5dfbffdfdabe064f866e6e->enter($__internal_f091ff8bdbb54a1b8317bdf573f1bd9f1afb1594ae5dfbffdfdabe064f866e6e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Visites";
         
-        $__internal_8b71a1cc736f02e60a88f3c6c45142e7756edf11e1560e595304f13692444e96->leave($__internal_8b71a1cc736f02e60a88f3c6c45142e7756edf11e1560e595304f13692444e96_prof);
+        $__internal_f091ff8bdbb54a1b8317bdf573f1bd9f1afb1594ae5dfbffdfdabe064f866e6e->leave($__internal_f091ff8bdbb54a1b8317bdf573f1bd9f1afb1594ae5dfbffdfdabe064f866e6e_prof);
 
         
-        $__internal_0c6d87b67920d19a24be2f16d3e07f6099d51e8d5c8eea43d6a720a5eee3a743->leave($__internal_0c6d87b67920d19a24be2f16d3e07f6099d51e8d5c8eea43d6a720a5eee3a743_prof);
+        $__internal_10f72a71ce9f86b0c28011513c6e79d275d402a4018d7864e6dd98c5fd15d888->leave($__internal_10f72a71ce9f86b0c28011513c6e79d275d402a4018d7864e6dd98c5fd15d888_prof);
 
     }
 
     // line 2
     public function block_page_content($context, array $blocks = array())
     {
-        $__internal_f48ba8e89da7a542690d5d387f4c38b38dc653bd874e779527ca3c3a17e3d8a2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f48ba8e89da7a542690d5d387f4c38b38dc653bd874e779527ca3c3a17e3d8a2->enter($__internal_f48ba8e89da7a542690d5d387f4c38b38dc653bd874e779527ca3c3a17e3d8a2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "page_content"));
+        $__internal_f4c9786f4d2949ad61cf07077a67ad07dd0092767566bdd51ccda43d31583203 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f4c9786f4d2949ad61cf07077a67ad07dd0092767566bdd51ccda43d31583203->enter($__internal_f4c9786f4d2949ad61cf07077a67ad07dd0092767566bdd51ccda43d31583203_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "page_content"));
 
-        $__internal_4fe63e0f8449faea48495534984f9f16c3ffe3bc615dbe5f73e03dbbe779bfed = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4fe63e0f8449faea48495534984f9f16c3ffe3bc615dbe5f73e03dbbe779bfed->enter($__internal_4fe63e0f8449faea48495534984f9f16c3ffe3bc615dbe5f73e03dbbe779bfed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "page_content"));
+        $__internal_59646f2c4c02759a3e80938f6151d13f5af62da9c8f3331e681193f1853e5406 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_59646f2c4c02759a3e80938f6151d13f5af62da9c8f3331e681193f1853e5406->enter($__internal_59646f2c4c02759a3e80938f6151d13f5af62da9c8f3331e681193f1853e5406_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "page_content"));
 
         // line 3
         echo "    <h4>Test</h4>
@@ -69,62 +69,46 @@ class __TwigTemplate_885df6c31270593ea3e1c3a7aea44d43c73b3fa555a37d9c30bede9d290
         <th>REF</th>
         <th>Data</th>
         <th>Hora</th>
-        <th>Tipus de visita</th>
-        <th>Descripció</th>
-        <th>Metge visitat</th>
-        <th>Pacient visitat</th>
     </thead>
     <tbody>
         ";
-        // line 15
+        // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["Visites"] ?? $this->getContext($context, "Visites")));
         foreach ($context['_seq'] as $context["_key"] => $context["visites"]) {
-            // line 16
+            // line 12
             echo "            <tr>
                 <td>";
-            // line 17
+            // line 13
             echo twig_escape_filter($this->env, $this->getAttribute($context["visites"], "ref", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["visites"], "data", array()), "Y-m-d"), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["visites"], "data", array()), "d-m-Y"), "html", null, true);
             echo "</td>
                 <td>";
-            // line 19
+            // line 15
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["visites"], "hora", array()), "H:i:s"), "html", null, true);
             echo "</td>
-                <td>";
-            // line 20
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["visites"], "tipusvisita", array()), "tipus", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute($context["visites"], "descripcio", array()), "html", null, true);
-            echo "</td>                
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["visites"], "metgevisitat", array()), "dni", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["visites"], "pacientvisitat", array()), "dni", array()), "html", null, true);
-            echo "</td>
+                <td><a href=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("clinica_pani_detallsvisita", array("ref" => $this->getAttribute($context["visites"], "ref", array()))), "html", null, true);
+            echo "\">Veure Detalls</a></td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['visites'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 19
         echo "    </tbody>
 </table>
 ";
         
-        $__internal_4fe63e0f8449faea48495534984f9f16c3ffe3bc615dbe5f73e03dbbe779bfed->leave($__internal_4fe63e0f8449faea48495534984f9f16c3ffe3bc615dbe5f73e03dbbe779bfed_prof);
+        $__internal_59646f2c4c02759a3e80938f6151d13f5af62da9c8f3331e681193f1853e5406->leave($__internal_59646f2c4c02759a3e80938f6151d13f5af62da9c8f3331e681193f1853e5406_prof);
 
         
-        $__internal_f48ba8e89da7a542690d5d387f4c38b38dc653bd874e779527ca3c3a17e3d8a2->leave($__internal_f48ba8e89da7a542690d5d387f4c38b38dc653bd874e779527ca3c3a17e3d8a2_prof);
+        $__internal_f4c9786f4d2949ad61cf07077a67ad07dd0092767566bdd51ccda43d31583203->leave($__internal_f4c9786f4d2949ad61cf07077a67ad07dd0092767566bdd51ccda43d31583203_prof);
 
     }
 
@@ -135,7 +119,7 @@ class __TwigTemplate_885df6c31270593ea3e1c3a7aea44d43c73b3fa555a37d9c30bede9d290
 
     public function getDebugInfo()
     {
-        return array (  120 => 26,  111 => 23,  107 => 22,  103 => 21,  99 => 20,  95 => 19,  91 => 18,  87 => 17,  84 => 16,  80 => 15,  66 => 3,  57 => 2,  39 => 1,  29 => 2,  27 => 1,);
+        return array (  104 => 19,  95 => 16,  91 => 15,  87 => 14,  83 => 13,  80 => 12,  76 => 11,  66 => 3,  57 => 2,  39 => 1,  29 => 2,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -156,21 +140,14 @@ class __TwigTemplate_885df6c31270593ea3e1c3a7aea44d43c73b3fa555a37d9c30bede9d290
         <th>REF</th>
         <th>Data</th>
         <th>Hora</th>
-        <th>Tipus de visita</th>
-        <th>Descripció</th>
-        <th>Metge visitat</th>
-        <th>Pacient visitat</th>
     </thead>
     <tbody>
         {% for visites in Visites %}
             <tr>
                 <td>{{ visites.ref }}</td>
-                <td>{{ visites.data|date('Y-m-d') }}</td>
+                <td>{{ visites.data|date('d-m-Y') }}</td>
                 <td>{{ visites.hora|date('H:i:s') }}</td>
-                <td>{{ visites.tipusvisita.tipus }}</td>
-                <td>{{ visites.descripcio }}</td>                
-                <td>{{ visites.metgevisitat.dni }}</td>
-                <td>{{ visites.pacientvisitat.dni }}</td>
+                <td><a href=\"{{ path('clinica_pani_detallsvisita',{'ref': visites.ref}) }}\">Veure Detalls</a></td>
             </tr>
         {% endfor %}
     </tbody>
