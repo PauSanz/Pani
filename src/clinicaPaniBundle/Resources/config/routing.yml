@@ -9,3 +9,7 @@ clinica_pani_vistametge:
 clinica_pani_vistavisites:
     path:     /vvisites
     defaults: { _controller: clinicaPaniBundle:Visites:vistaVisita }
+
+clinica_pani_detallsvisita:
+    path:     /dtllsvisita/{ref}
+    defaults: { _controller: clinicaPaniBundle:Visites:veureDetalls }
