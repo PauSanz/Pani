@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity
  */
-class Client
-{
+class Client {
+
     /**
      * @var string
      *
@@ -35,7 +35,9 @@ class Client
      */
     private $dni;
 
-
+//    public function __construct() {
+//        
+//    }
 
     /**
      * Set nom
@@ -44,8 +46,7 @@ class Client
      *
      * @return Client
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -56,8 +57,7 @@ class Client
      *
      * @return string
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -68,8 +68,7 @@ class Client
      *
      * @return Client
      */
-    public function setCognom($cognom)
-    {
+    public function setCognom($cognom) {
         $this->cognom = $cognom;
 
         return $this;
@@ -80,8 +79,7 @@ class Client
      *
      * @return string
      */
-    public function getCognom()
-    {
+    public function getCognom() {
         return $this->cognom;
     }
 
@@ -90,8 +88,8 @@ class Client
      *
      * @return string
      */
-    public function getDni()
-    {
+    public function getDni() {
         return $this->dni;
     }
+
 }

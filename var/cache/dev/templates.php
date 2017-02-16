@@ -83,6 +83,7 @@
   'clinicaPaniBundle:Default:dtllsvisita.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/dtllsvisita.html.twig',
   'clinicaPaniBundle:Default:index.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/index.html.twig',
   'clinicaPaniBundle:Default:vmetges.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/vmetges.html.twig',
+  'clinicaPaniBundle:Default:vpacients.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/vpacients.html.twig',
   'clinicaPaniBundle:Default:vvisites.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/vvisites.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Collector:ajax.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/ajax.html.twig',
