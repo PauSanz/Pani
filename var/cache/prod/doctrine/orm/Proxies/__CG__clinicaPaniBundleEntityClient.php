@@ -64,10 +64,10 @@ class Client extends \clinicaPaniBundle\Entity\Client implements \Doctrine\ORM\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'dni', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'cognom'];
+            return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'dni'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'dni', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'cognom'];
+        return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Client' . "\0" . 'dni'];
     }
 
     /**
@@ -176,43 +176,6 @@ class Client extends \clinicaPaniBundle\Entity\Client implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
-    public function getId()
-    {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
-
-        return parent::getId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDni($dni)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDni', [$dni]);
-
-        return parent::setDni($dni);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDni()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDni', []);
-
-        return parent::getDni();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setNom($nom)
     {
 
@@ -252,6 +215,32 @@ class Client extends \clinicaPaniBundle\Entity\Client implements \Doctrine\ORM\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCognom', []);
 
         return parent::getCognom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDni($dni)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDni', [$dni]);
+
+        return parent::setDni($dni);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDni()
+    {
+        if ($this->__isInitialized__ === false) {
+            return  parent::getDni();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDni', []);
+
+        return parent::getDni();
     }
 
 }

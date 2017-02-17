@@ -64,10 +64,10 @@ class Metge extends \clinicaPaniBundle\Entity\Metge implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'id', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'dni', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'especialitat'];
+            return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'especialitat', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'dni'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'id', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'dni', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'especialitat'];
+        return ['__isInitialized__', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'nom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'cognom', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'especialitat', '' . "\0" . 'clinicaPaniBundle\\Entity\\Metge' . "\0" . 'dni'];
     }
 
     /**
@@ -176,43 +176,6 @@ class Metge extends \clinicaPaniBundle\Entity\Metge implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function getId()
-    {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
-
-        return parent::getId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDni($dni)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDni', [$dni]);
-
-        return parent::setDni($dni);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDni()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDni', []);
-
-        return parent::getDni();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setNom($nom)
     {
 
@@ -274,6 +237,21 @@ class Metge extends \clinicaPaniBundle\Entity\Metge implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEspecialitat', []);
 
         return parent::getEspecialitat();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDni()
+    {
+        if ($this->__isInitialized__ === false) {
+            return  parent::getDni();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDni', []);
+
+        return parent::getDni();
     }
 
 }
