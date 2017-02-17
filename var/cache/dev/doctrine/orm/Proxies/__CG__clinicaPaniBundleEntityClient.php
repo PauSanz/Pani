@@ -220,6 +220,17 @@ class Client extends \clinicaPaniBundle\Entity\Client implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
+    public function setDni($dni)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDni', [$dni]);
+
+        return parent::setDni($dni);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDni()
     {
         if ($this->__isInitialized__ === false) {

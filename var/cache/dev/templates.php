@@ -80,6 +80,7 @@
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
   'clinicaPaniBundle:Default:404.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/404.html.twig',
+  'clinicaPaniBundle:Default:apacient.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/apacient.html.twig',
   'clinicaPaniBundle:Default:dtllsvisita.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/dtllsvisita.html.twig',
   'clinicaPaniBundle:Default:index.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/index.html.twig',
   'clinicaPaniBundle:Default:vmetges.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/vmetges.html.twig',
@@ -119,5 +120,9 @@
   'WebProfilerBundle:Profiler:toolbar_redirect.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_redirect.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
+  ':client:edit.html.twig' => __DIR__.'/../../../app/Resources/views/client/edit.html.twig',
+  ':client:index.html.twig' => __DIR__.'/../../../app/Resources/views/client/index.html.twig',
+  ':client:new.html.twig' => __DIR__.'/../../../app/Resources/views/client/new.html.twig',
+  ':client:show.html.twig' => __DIR__.'/../../../app/Resources/views/client/show.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
 );
