@@ -1,7 +1,3 @@
-clinica_pani_client:
-    resource: "@clinicaPaniBundle/Resources/config/routing/client.yml"
-    prefix:   /client
-
 clinica_pani_homepage:
     path:     /
     defaults: { _controller: clinicaPaniBundle:Default:index }
@@ -9,15 +5,27 @@ clinica_pani_homepage:
 clinica_pani_vistametge:
     path:     /vmetge
     defaults: { _controller: clinicaPaniBundle:Metges:vistaMetge }
-#
-#clinica_pani_vistapacient:
-#    path:     /vpacient
-#    defaults: { _controller: clinicaPaniBundle:Pacients:vistaPacient }
-#
+
+clinica_pani_vistapacient:
+    path:     /vpacient
+    defaults: { _controller: clinicaPaniBundle:Pacients:vistaPacient }
+    
+clinica_pani_modipacient:
+    path:     /mdfpacient/{dni}
+    defaults: { _controller: clinicaPaniBundle:Pacients:modificarPacient }
+    
+clinica_pani_afgrpacient:
+    path:     /afgrpacient/
+    defaults: { _controller: clinicaPaniBundle:Pacients:afegirPacient }
+    
+clinica_pani_elimpacient:
+    path:     /elmnpacient/{dni}
+    defaults: { _controller: clinicaPaniBundle:Pacients:eliminarPacient }
+
 #clinica_pani_vistavisita:
 #    path:     /vvisita
 #    defaults: { _controller: clinicaPaniBundle:Visites:vistaVsta }
-#    
+    
 clinica_pani_vistavisites:
     path:     /vvisites
     defaults: { _controller: clinicaPaniBundle:Visites:vistaVisita }
