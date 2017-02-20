@@ -38,6 +38,7 @@ class Client {
         $this->dni = null;
     }
 
+
     /**
      * Set nom
      *
@@ -103,7 +104,5 @@ class Client {
     public function getDni() {
         return $this->dni;
     }
-    
-    
 
 }
