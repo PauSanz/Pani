@@ -10,7 +10,8 @@ class VisitesController extends Controller {
         //return $this->render('clinicaPaniBundle:Default:index.html.twig');
         $visites = $this->getDoctrine()->getRepository('clinicaPaniBundle:Visita')->findAll();
         return $this->render('clinicaPaniBundle:Default:vvisites.html.twig', array(
-                    'Visites' => $visites
+                    'Visites' => $visites,
+                    'titol' => 'Visites registrades'
         ));
     }
 
