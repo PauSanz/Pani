@@ -43,9 +43,10 @@ class PacientsController extends Controller {
         // else {
         $pacient = new Client();
         $form = $this->createFormBuilder($pacient)
+
+                ->add('dni', TextType::class, array('label' => 'DNI'))
                 ->add('nom', TextType::class, array('label' => 'Nom'))
                 ->add('cognom', TextType::class, array('label' => 'Cognom'))
-                ->add('dni', TextType::class, array('label' => 'Dni'))
                 ->add('afegir', SubmitType::class, array('label' => 'Afegir Pacient'))
                 ->getForm();
 
