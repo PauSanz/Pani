@@ -30,14 +30,14 @@ class Client {
      * @var string
      *
      * @ORM\Column(name="dni", type="string", length=9)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $dni;
 
-//    public function __construct() {
-//        
-//    }
+    public function __construct() {
+        $this->dni = null;
+    }
+
 
     /**
      * Set nom
@@ -81,6 +81,19 @@ class Client {
      */
     public function getCognom() {
         return $this->cognom;
+    }
+    
+    /**
+     * Set dni
+     *
+     * @param string $dni
+     *
+     * @return Client
+     */
+    public function setDni($dni) {
+        $this->dni = $dni;
+
+        return $this;
     }
 
     /**

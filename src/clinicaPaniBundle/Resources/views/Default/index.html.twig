@@ -40,8 +40,10 @@
                                 </li>
                                 {#<li><a href="{{ path('clinica_pani_vistavisita') }}">Visites</a>
                                 </li>#}
+
                                 <li><a href="{{ path('clinica_pani_vistavisites') }}">Llistat de Visites</a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -49,12 +51,58 @@
             {% endblock %}
 
             {% block page_content %}
-                
+                <div class="container">
+
+                    <!-- Heading Row -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img class="img-responsive img-rounded" src="{{ asset('images/1.jpg') }}" alt="">
+                        </div>
+                        <!-- /.col-md-8 -->
+                        <div class="col-md-4">
+                            <h1>Confia en nosaltres</h1>
+                            <p>En la clínica Pani sempre busquem que et sentis segur, oferint els millors serveis de tot el país.</p>
+                            <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+                        </div>
+                        <!-- /.col-md-4 -->
+                    </div>
+                    <!-- /.row -->
+
+                    <hr>
+
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2>Heading 1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                            <a class="btn btn-default" href="#">More Info</a>
+                        </div>
+                        <!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <h2>Heading 2</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                            <a class="btn btn-default" href="#">More Info</a>
+                        </div>
+                        <!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <h2>Heading 3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+                            <a class="btn btn-default" href="#">More Info</a>
+                        </div>
+                        <!-- /.col-md-4 -->
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- Footer -->
+
+
+                </div>   
             {% endblock %}
             <footer>
                 <div class="footer-bottom">
                     <div class="container">
-                        <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+                        <p class="pull-left"> Clinica Pani </p>
                     </div>
                 </div>
                 <!--/.footer-bottom--> 
@@ -63,12 +111,12 @@
             <!-- /.container -->
         {% endblock %}
         {% block javascripts %}
-                <!-- jQuery -->
-                <script src="{{ asset('js/jquery.js') }}"></script>
+            <!-- jQuery -->
+            <script src="{{ asset('js/jquery.js') }}"></script>
 
-                <!-- Bootstrap Core JavaScript -->
-                <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-            {% endblock %}
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
 
