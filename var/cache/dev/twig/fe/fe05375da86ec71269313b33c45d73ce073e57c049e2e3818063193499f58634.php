@@ -15,11 +15,11 @@ class __TwigTemplate_9c1e64c2a44148bd8e2369b8518b4fefaf15e8ff1944a6c046a199288f4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a08a207b088159a1d861f79d5c84d633132d9c45066d3d4d96b432321ed6ba36 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a08a207b088159a1d861f79d5c84d633132d9c45066d3d4d96b432321ed6ba36->enter($__internal_a08a207b088159a1d861f79d5c84d633132d9c45066d3d4d96b432321ed6ba36_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Router:panel.html.twig"));
+        $__internal_4a9b7a34ca076fbbc69694b3ff0559e0a01ed2d51bfe60a08f8fe733f9872e41 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4a9b7a34ca076fbbc69694b3ff0559e0a01ed2d51bfe60a08f8fe733f9872e41->enter($__internal_4a9b7a34ca076fbbc69694b3ff0559e0a01ed2d51bfe60a08f8fe733f9872e41_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Router:panel.html.twig"));
 
-        $__internal_087c6bffbf8e86dd6995c8661b3096867f8e2691046f5725aad8d3c7519b99ab = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_087c6bffbf8e86dd6995c8661b3096867f8e2691046f5725aad8d3c7519b99ab->enter($__internal_087c6bffbf8e86dd6995c8661b3096867f8e2691046f5725aad8d3c7519b99ab_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Router:panel.html.twig"));
+        $__internal_d89befda6677f26e82104bb3f01c7066e0a826f843f547afcf18626b9bd4ae0a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d89befda6677f26e82104bb3f01c7066e0a826f843f547afcf18626b9bd4ae0a->enter($__internal_d89befda6677f26e82104bb3f01c7066e0a826f843f547afcf18626b9bd4ae0a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Router:panel.html.twig"));
 
         // line 1
         echo "<h2>Routing</h2>
@@ -200,10 +200,10 @@ $context["trace"], "level", array()) == 2)) {
 </p>
 ";
         
-        $__internal_a08a207b088159a1d861f79d5c84d633132d9c45066d3d4d96b432321ed6ba36->leave($__internal_a08a207b088159a1d861f79d5c84d633132d9c45066d3d4d96b432321ed6ba36_prof);
+        $__internal_4a9b7a34ca076fbbc69694b3ff0559e0a01ed2d51bfe60a08f8fe733f9872e41->leave($__internal_4a9b7a34ca076fbbc69694b3ff0559e0a01ed2d51bfe60a08f8fe733f9872e41_prof);
 
         
-        $__internal_087c6bffbf8e86dd6995c8661b3096867f8e2691046f5725aad8d3c7519b99ab->leave($__internal_087c6bffbf8e86dd6995c8661b3096867f8e2691046f5725aad8d3c7519b99ab_prof);
+        $__internal_d89befda6677f26e82104bb3f01c7066e0a826f843f547afcf18626b9bd4ae0a->leave($__internal_d89befda6677f26e82104bb3f01c7066e0a826f843f547afcf18626b9bd4ae0a_prof);
 
     }
 

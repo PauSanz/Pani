@@ -80,6 +80,7 @@
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
   'clinicaPaniBundle:Default:404.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/404.html.twig',
+  'clinicaPaniBundle:Default:apacient.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/apacient.html.twig',
   'clinicaPaniBundle:Default:dtllsvisita.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/dtllsvisita.html.twig',
   'clinicaPaniBundle:Default:index.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/index.html.twig',
   'clinicaPaniBundle:Default:vmetges.html.twig' => __DIR__.'/../../../src/clinicaPaniBundle/Resources/views/Default/vmetges.html.twig',
