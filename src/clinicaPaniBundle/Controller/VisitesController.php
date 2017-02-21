@@ -33,7 +33,7 @@ class VisitesController extends Controller {
         }
 
         return $this->render('clinicaPaniBundle:Default:dtllsvisita.html.twig', array(
-                    'ref' => 'Número de referència ' . $ref,
+                    'titol' => 'Detalls de la visita ref: ' . $ref,
                     'visita' => $visita));
     }
 
