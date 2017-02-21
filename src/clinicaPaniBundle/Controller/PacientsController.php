@@ -43,7 +43,6 @@ class PacientsController extends Controller {
         // else {
         $pacient = new Client();
         $form = $this->createFormBuilder($pacient)
-
                 ->add('dni', TextType::class, array('label' => 'DNI'))
                 ->add('nom', TextType::class, array('label' => 'Nom'))
                 ->add('cognom', TextType::class, array('label' => 'Cognom'))
@@ -69,6 +68,56 @@ class PacientsController extends Controller {
                     'titol' => 'Afegir Pacient',
                     'form' => $form->createView()));
         //}
+    }
+
+    public function modificarPacientAction($dni,Request $req) {
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $pacients = $em->getRepository("clinicaPaniBundle:Client");
+
+        $pcnt = $pacients->findOneBy(array('dni' => $dni));
+
+        if (!$pcnt) {
+            /* throw $this->createNotFoundException(
+              'No s\'ha trobat categoría per la id '.$id
+              ); */
+            $response = $this->render('clinicaPaniBundle:Default:404.html.twig', array(
+                'message' => 'No s\'ha pogut trobar el pacient, pacient no existent '
+            ));
+
+            $response->setStatusCode(404);
+
+            return $response;
+        } else {
+            $form = $this->createFormBuilder($pcnt)
+                    ->add('dni', TextType::class, array('label' => 'DNI','data' => $pcnt->getDni()))
+                    ->add('nom', TextType::class, array('label' => 'Nom','data' => $pcnt->getNom()))
+                    ->add('cognom', TextType::class, array('label' => 'Cognom','data' => $pcnt->getCognom()))
+                    ->add('afegir', SubmitType::class, array('label' => 'Afegir Pacient'))
+                    ->getForm();
+
+            $form->handleRequest($req);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                // $form->getData() holds the submitted values
+                // but, the original `$task` variable has also been updated
+                $pcnt = $form->getData();
+
+                // ... perform some action, such as saving the task to the database
+                // for example, if Category is a Doctrine entity, save it!
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($pcnt);
+                $em->flush();
+
+                return $this->redirectToRoute('clinica_pani_vistapacient');
+            }
+        }
+        
+        return $this->render('clinicaPaniBundle:Default:epacient.html.twig', array(
+                    'titol' => 'Modificar Pacient',
+                    'form' => $form->createView()));
+
+        //return
     }
 
     public function eliminarPacientAction($dni) {
