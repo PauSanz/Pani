@@ -1,23 +1,97 @@
+{% extends "clinicaPaniBundle:Default:index.html.twig " %}
 {% block title %}Clinica Pani{% endblock %}
 {% block page_content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-lg-12 col-md-12">
-                <h4 class="">{{ ref }}</h4>
-            </div>
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <p>{{ visita.ref }}</p>
-                    <p>{{ visita.data|date('d-m-Y') }}</p>
-                    <p>{{ visita.hora|date('H:i:s') }}</p>
-                    <p>{{ visita.tipusvisita.tipus }}</p>
-                    <p>{{ visita.descripcio }}</p>
-                    <p>{{ visita.metgevisitat.nom }}</p>
-                    <p>{{ visita.metgevisitat.cognom }}</p>
-                    <p>{{ visita.metgevisitat.dni }}</p>
-                    <p>{{ visita.pacientvisitat.nom }}</p>                    
-                    <p>{{ visita.pacientvisitat.cognom }}</p>
-                    <p>{{ visita.pacientvisitat.dni }}</p>
+            <div class="col-lg-6 col-lg-offset-3">
+            <h1> {{ titol }} </h1>    
+            <div class="panel panel-default panel-table table-responsive">
+                <div class="panel-heading colorTaula">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h3 class="panel-title"> Detalls del pacient</h3>
+                        </div>
+                    </div>
                 </div>
+                <div class="panel-body ">
+                    <table class="table table-striped table-bordered table-list">
+                        <tbody>
+                            <tr>
+                                <td><b>DNI</b></td>
+                                <td>{{ visita.pacientvisitat.dni }}</td>                         
+                            </tr>
+                            <tr>
+                                <td><b>Nom</b></td>
+                                <td>{{ visita.pacientvisitat.nom }}</td>                         
+                            </tr>
+                            <tr>
+                                <td><b>Cognom</b></td>
+                                <td>{{ visita.pacientvisitat.cognom }}</td>                            
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default panel-table table-responsive">
+                <div class="panel-heading colorTaula">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h3 class="panel-title"> Detalls del metge</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body ">
+                    <table class="table table-striped table-bordered table-list">
+                        <tbody>
+                            <tr>
+                                <td><b>DNI</b></td>
+                                <td>{{ visita.metgevisitat.dni }}</td>                           
+                            </tr>
+                            <tr>
+                                <td><b>Nom</b></td>
+                                <td>{{ visita.metgevisitat.nom }}</td>                           
+                            </tr>
+                            <tr>
+                                <td><b>Cognom</b></td>
+                                <td>{{ visita.metgevisitat.cognom }}</td>                           
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default panel-table table-responsive">
+                <div class="panel-heading colorTaula">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h3 class="panel-title"> Detalls del la visita</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body ">
+                    <table class="table table-striped table-bordered table-list">
+                        <tbody>
+                            <tr>
+                                <td><b>Data</b></td>
+                                <td>{{ visita.data|date('d-m-Y') }}</td>                           
+                            </tr>
+                            <tr>
+                                <td><b>Hora</b></td>
+                                <td>{{ visita.hora|date('H:i:s') }}</td>                           
+                            </tr>
+                            <tr>
+                                <td><b>Tipus</b></td>
+                                <td>{{ visita.tipusvisita.tipus }}</td>                           
+                            </tr>
+                            <tr>
+                                <td><b>Descripció:</b></td>
+                                <td>{{ visita.descripcio }}</td>                           
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 {% endblock %}
