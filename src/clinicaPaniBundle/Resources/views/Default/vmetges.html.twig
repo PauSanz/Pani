@@ -1,23 +1,49 @@
 {% extends "clinicaPaniBundle:Default:index.html.twig " %}
 {% block title %}Metges{% endblock %}
 {% block page_content %}
-    <h4>Test</h4>
-    <table id="mytable" class="table table-bordred table-striped">
-        <thead>
-        <th>DNI</th>
-        <th>Nom</th>
-        <th>Cognom</th>
-        <th>Especialitat</th>
-    </thead>
-    <tbody>
-        {% for metge in Metges %}
-            <tr>
-                <th>{{ metge.dni }}</th>
-                <td>{{ metge.nom }}</td>
-                <td>{{ metge.cognom }}</td>
-                <td>{{ metge.especialitat }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <div class="container">
+        <h1> Administració de metges </h1>    
+        <div class="panel panel-default panel-table table-responsive">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <h3 class="panel-title">{{ titol }}</h3>
+                    </div>
+                    <div class="col col-xs-12 text-right">
+                        {#<button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>#}
+                        <a class="btn btn-info" href="{{ path('clinica_pani_afgrmetge')}}">Afegir Metge</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body ">
+                <table class="table table-striped table-bordered table-list">
+                    <thead>
+                        <tr>
+                            <th><em class="fa fa-cog"></em></th>
+                            <th>DNI</th>
+                            <th>Nom</th>
+                            <th>Cognom</th>
+                            <th>Especialitat</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for metge in Metges %}
+                            <tr>
+                                <td align="center">
+                                    <a class="btn btn-default" href="{{ path('clinica_pani_modimetge',{'dni': metge.dni}) }}"><em class="fa fa-pencil"></em></a>
+                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimmetge',{'dni': metge.dni}) }}"><em class="fa fa-trash"></em></a>
+                                </td>
+                                <td>{{ metge.dni }}</td>
+                                <td>{{ metge.nom }}</td>
+                                <td>{{ metge.cognom }}</td>
+                                <td>{{ metge.especialitat }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
