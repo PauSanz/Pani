@@ -10,7 +10,8 @@ class MetgesController extends Controller {
         //return $this->render('clinicaPaniBundle:Default:index.html.twig');
         $metges = $this->getDoctrine()->getRepository('clinicaPaniBundle:Metge')->findAll();
         return $this->render('clinicaPaniBundle:Default:vmetges.html.twig', array(
-                    'Metges' => $metges
+                    'Metges' => $metges,
+                    'titol' => 'Metges registrats'
         ));
     }
 
