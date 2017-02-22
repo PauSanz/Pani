@@ -17,7 +17,7 @@
                     </div>
                     <div class="col col-xs-12 text-right">
                         {#<button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>#}
-                        <a class="btn btn-info" href="{#{{ path('clinica_pani_afgrvisita')}}#}#">Afegir Visita</a>
+                        <a class="btn btn-info" href="{{ path('clinica_pani_afgrvisita')}}">Afegir Visita</a>
                     </div>
                 </div>
             </div>
@@ -39,6 +39,7 @@
                             {% for visites in Visites %}
 
 
+
                                 {% if choice == 'Tots' or visites.tipusvisita.tipus == choice %}     
                                 <tr>
                                     <td align="center">
@@ -55,6 +56,7 @@
                                     </td>
                                 </tr>
                             {% endif %}
+
                         {% endfor %}
                         </tr>
                     </tbody>
