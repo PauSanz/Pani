@@ -58,3 +58,16 @@ clinica_pani_elimpacient:
 #·············································································
 # CRUD VISITA
 #.............................................................................
+
+clinica_pani_afgrvisita:
+    path:     /afgrvisita
+    defaults: { _controller: clinicaPaniBundle:Visites:afegirVisita }
+
+    
+clinica_pani_modivisita:
+    path:     /modivisita/{ref}
+    defaults: { _controller: clinicaPaniBundle:Visites:modificarVisita }
+    
+clinica_pani_elimvisita:
+    path:     /elimvisita/{ref}
+    defaults: { _controller: clinicaPaniBundle:Visites:eliminarVisita }

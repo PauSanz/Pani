@@ -11,7 +11,7 @@
                     </div>
                     <div class="col col-xs-12 text-right">
                         {#<button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>#}
-                        <a class="btn btn-info" href="{#{{ path('clinica_pani_afgrvisita')}}#}#">Afegir Visita</a>
+                        <a class="btn btn-info" href="{{ path('clinica_pani_afgrvisita')}}">Afegir Visita</a>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,8 @@
                             {% for visites in Visites %}
                             <tr>
                                 <td align="center">
-                                    <a class="btn btn-default" href="{#{{ path('clinica_pani_modipacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-pencil"></em></a>
-                                    <a class="btn btn-danger" href="{#{{ path('clinica_pani_elimpacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-trash"></em></a>
+                                    <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
+                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
                                 </td>
                                 <td>{{ visites.ref }}</td>
                                 <td>{{ visites.data|date('d-m-Y') }}</td>
