@@ -1,0 +1,12 @@
+{% extends "clinicaPaniBundle:Default:index.html.twig " %}
+{% block title %}Visites{% endblock %}
+{% block page_content %}
+    <div class="container">
+        <h1> {{ titol }}</h1>    
+        <div>
+            {{ form_start(form)}}
+            {{ form_widget(form)}}
+            {{ form_end(form)}}
+        </div>
+    </div>
+{% endblock %}
