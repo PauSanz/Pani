@@ -2,7 +2,13 @@
 {% block title %}Visites{% endblock %}
 {% block page_content %}
     <div class="container">
-        <h1> Administració de visites </h1>    
+        <h1> Administració de visites </h1>   
+        <div>
+            {{ form_start(form)}}
+            {{ form_widget(form)}}
+            {{ form_end(form)}}
+            {{ choice }}
+        </div>
         <div class="panel panel-default panel-table table-responsive">
             <div class="panel-heading">
                 <div class="row">
@@ -31,20 +37,26 @@
                     <tbody>
                         <tr>
                             {% for visites in Visites %}
-                            <tr>
-                                <td align="center">
-                                    <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
-                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
-                                </td>
-                                <td>{{ visites.ref }}</td>
-                                <td>{{ visites.data|date('d-m-Y') }}</td>
-                                <td>{{ visites.hora|date('H:i:s') }}</td>
-                                <td>{{ visites.metgevisitat.nom }}</td>
-                                <td>{{ visites.pacientvisitat.nom }}</td>
-                                <td align="center">
-                                    <a class="btn btn-info" href="{{ path('clinica_pani_detallsvisita',{'ref': visites.ref}) }}">Veure Detalls</a>
-                                </td>
-                            </tr>
+
+
+
+                                {% if choice == 'Tots' or visites.tipusvisita.tipus == choice %}     
+                                <tr>
+                                    <td align="center">
+                                        <a class="btn btn-default" href="{#{{ path('clinica_pani_modipacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-pencil"></em></a>
+                                        <a class="btn btn-danger" href="{#{{ path('clinica_pani_elimpacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-trash"></em></a>
+                                    </td>
+                                    <td>{{ visites.ref }}</td>
+                                    <td>{{ visites.data|date('d-m-Y') }}</td>
+                                    <td>{{ visites.hora|date('H:i:s') }}</td>
+                                    <td>{{ visites.metgevisitat.nom }}</td>
+                                    <td>{{ visites.pacientvisitat.nom }}</td>
+                                    <td align="center">
+                                        <a class="btn btn-info" href="{{ path('clinica_pani_detallsvisita',{'ref': visites.ref}) }}">Veure Detalls</a>
+                                    </td>
+                                </tr>
+                            {% endif %}
+
                         {% endfor %}
                         </tr>
                     </tbody>

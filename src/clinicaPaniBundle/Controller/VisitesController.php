@@ -2,6 +2,7 @@
 
 namespace clinicaPaniBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use clinicaPaniBundle\Entity\Visita;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,15 +11,45 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class VisitesController extends Controller {
 
-    public function vistaVisitaAction() {
+
+    public function vistaVisitaAction(Request $req) {
+        $imprimir = 'Tots';
+        $form = $this->createFormBuilder()
+        ->add('Filtrar', ChoiceType::class, array(
+        'choices' => array(
+        'Tots' => 'Tots',
+        'Concertada' => 'Concertada',
+        'Tractament' => 'Tractament',
+        'Urgent' => 'Urgent')))
+        ->add('afegir', SubmitType::class, array('label' => 'Filtrar'))
+        ->getForm();
+        
+        
+        $form->handleRequest($req);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $dadas = $form->get('Filtrar')->getData();
+            $imprimir = $dadas;
+
+            
+        }
+
+        
+        //return $this->render('clinicaPaniBundle:Default:index.html.twig');
+
         $visites = $this->getDoctrine()->getRepository('clinicaPaniBundle:Visita')->findAll();
         return $this->render('clinicaPaniBundle:Default:vvisites.html.twig', array(
                     'Visites' => $visites,
-                    'titol' => 'Visites registrades'
+                    'titol' => 'Visites registrades',
+                    'choice' => $imprimir,
+                    'form' => $form->createView()
         ));
     }
 
+    
     public function veureDetallsAction($ref) {
+
         $visita = $this->getDoctrine()->getRepository('clinicaPaniBundle:Visita')->findOneBy(array('ref' => $ref));
 
         if (!$visita) {
