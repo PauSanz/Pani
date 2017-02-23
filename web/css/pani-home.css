@@ -43,9 +43,6 @@
     background-color: #0081fa;
 }
 
-
-
-
 .slide-image {
     width: 100%;
 }
@@ -284,4 +281,9 @@ used to vertically center elements, may need modification if you're not using de
 
 .panel-table .panel-body .table-bordered > tbody > tr > td{
     line-height: 34px;
+}
+
+.colorTaula {
+    background-color: rgba(0, 129, 250, 1)!important;
+    color: white!important;
 }
