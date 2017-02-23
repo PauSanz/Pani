@@ -7,10 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use clinicaPaniBundle\Entity\Visita;
 use clinicaPaniBundle\Entity\Tipusvisita;
 use clinicaPaniBundle\Entity\Metge;
-use clinicaPaniBundle\Entity\Pacient;
+use clinicaPaniBundle\Entity\Client;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 
 class VisitesController extends Controller {
 
@@ -67,13 +69,11 @@ class VisitesController extends Controller {
     }
 
     public function afegirVisitaAction(Request $req) {
-        $visita = new Visita();
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
-
-        $form = $this->createFormBuilder($visita)
-                ->add('data', TextType::class, array('label' => 'Data'))
-                ->add('hora', TextType::class, array('label' => 'Hora'))
+        $form = $this->createFormBuilder()
+                ->add('data', DateType::class, array('label' => 'Data'))
+                ->add('hora', TimeType::class, array('label' => 'Hora'))
                 ->add('descripcio', TextType::class, array('label' => 'Descripció'))
                 //APLICAR DROPDOWN CHOICE
                 ->add('tipusVisita', ChoiceType::class, array(
@@ -89,19 +89,27 @@ class VisitesController extends Controller {
         $form->handleRequest($req);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
+
+            $visita = new Visita();
+            $em = $this->getDoctrine()->getEntityManager();
+
+            $visita->setData($form->get('data')->getData());
+            $visita->setHora($form->get('hora')->getData());
+            $visita->setDescripcio($form->get('descripcio')->getData());
+            $visita->setTipusvisita($form->get('tipusVisita')->getData());
+
 //          Metge
             $dniM = $form->get('metgeVisitat')->getData();
             $metges = $em->getRepository("clinicaPaniBundle:Metge");
             $metge = $metges->findOneBy(array('dni' => $dniM));
-            $form->get('metgeVisitat')->setData($metge);
+            $visita->setMetgevisitat($metge);
 //          Pacient            
             $dniP = $form->get('pacientVisitat')->getData();
-            $pacients = $em->getRepository("clinicaPaniBundle:Pacient");
+            $pacients = $em->getRepository("clinicaPaniBundle:Client");
             $pacient = $pacients->findOneBy(array('dni' => $dniP));
-            $form->get('pacientVisitat')->setData($pacient);
-            
-            $visita = $form->getData();
+            $visita->setPacientvisitat($pacient);
+
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($visita);
@@ -133,11 +141,12 @@ class VisitesController extends Controller {
             return $response;
         } else {
             $form = $this->createFormBuilder($visita)
-                    ->add('ref', TextType::class, array('label' => 'Referència', 'data' => $visita->getRef()))
-                    ->add('data', TextType::class, array('label' => 'Data', 'data' => $visita->getData()))
+                    ->add('ref', DateType::class, array('label' => 'Referència', 'data' => $visita->getRef()))
+                    ->add('data', TimeType::class, array('label' => 'Data', 'data' => $visita->getData()))
                     ->add('hora', TextType::class, array('label' => 'Hora', 'data' => $visita->getHora()))
                     ->add('descripcio', TextType::class, array('label' => 'Descripció', 'data' => $visita->getDescripcio()))
                     //APLICAR DROPDOWN CHOICE I SELECTED
+                    
                     ->add('tipusVisita', TextType::class, array('label' => 'Tipus', 'data' => $visita->getTipusvisita()))
                     ->add('metgeVisitat', TextType::class, array('label' => 'Metge', 'data' => $visita->getMetgevisitat()))
                     ->add('pacientVisitat', TextType::class, array('label' => 'Pacient', 'data' => $visita->getPacientvisitat()))
