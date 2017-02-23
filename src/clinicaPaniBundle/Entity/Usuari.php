@@ -3,6 +3,7 @@
 namespace clinicaPaniBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuari
@@ -10,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="usuari", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_68CC94FF68CC94FF", columns={"usuari"})})
  * @ORM\Entity
  */
-class Usuari
-{
+class Usuari implements UserInterface{
+
     /**
      * @var string
      *
@@ -42,8 +43,6 @@ class Usuari
      */
     private $id;
 
-
-
     /**
      * Set usuari
      *
@@ -51,8 +50,7 @@ class Usuari
      *
      * @return Usuari
      */
-    public function setUsuari($usuari)
-    {
+    public function setUsuari($usuari) {
         $this->usuari = $usuari;
 
         return $this;
@@ -63,8 +61,7 @@ class Usuari
      *
      * @return string
      */
-    public function getUsuari()
-    {
+    public function getUsuari() {
         return $this->usuari;
     }
 
@@ -75,8 +72,7 @@ class Usuari
      *
      * @return Usuari
      */
-    public function setPass($pass)
-    {
+    public function setPass($pass) {
         $this->pass = $pass;
 
         return $this;
@@ -87,8 +83,7 @@ class Usuari
      *
      * @return string
      */
-    public function getPass()
-    {
+    public function getPass() {
         return $this->pass;
     }
 
@@ -99,8 +94,7 @@ class Usuari
      *
      * @return Usuari
      */
-    public function setRol($rol)
-    {
+    public function setRol($rol) {
         $this->rol = $rol;
 
         return $this;
@@ -111,8 +105,7 @@ class Usuari
      *
      * @return integer
      */
-    public function getRol()
-    {
+    public function getRol() {
         return $this->rol;
     }
 
@@ -121,8 +114,25 @@ class Usuari
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
+    public function getUsername() {
+        return $this->usuari;
+    }
+
+    public function getSalt() {
+        return null;
+    }
+
+    public function getRoles() {
+        // En este caso definimos un rol fijo, en el caso de que tengamos un campo role en la tabla de la BBDD    tendríamos que hacer $this->getRole()
+        return $this->getRol();
+    }
+
+    public function eraseCredentials() {
+        
+    }
+
 }

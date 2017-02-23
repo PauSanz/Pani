@@ -30,8 +30,9 @@
                             {% for metge in Metges %}
                             <tr>
                                 <td align="center">
-                                    <a class="btn btn-default" href="{{ path('clinica_pani_modimetge',{'dni': metge.dni}) }}"><em class="fa fa-pencil"></em></a>
-                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimmetge',{'dni': metge.dni}) }}"><em class="fa fa-trash"></em></a>
+                                    <a class="btn btn-default" href="{{ path('clinica_pani_modimetge',{'dni': metge.dni}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimmetge',{'dni': metge.dni}) }}"><i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
                                 </td>
                                 <td>{{ metge.dni }}</td>
                                 <td>{{ metge.nom }}</td>

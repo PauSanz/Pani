@@ -71,3 +71,15 @@ clinica_pani_modivisita:
 clinica_pani_elimvisita:
     path:     /elimvisita/{ref}
     defaults: { _controller: clinicaPaniBundle:Visites:eliminarVisita }
+#............................................................................
+# LOGIN
+#............................................................................
+
+login:
+    path:     /login
+    defaults: { _controller: clinicaPaniBundle:Usuari:login }
+ 
+login_check:
+    path: /login_check
+logout:
+    path: /logout
