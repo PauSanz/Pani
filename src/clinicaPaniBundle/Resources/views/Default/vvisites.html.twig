@@ -7,7 +7,6 @@
             {{ form_start(form)}}
             {{ form_widget(form)}}
             {{ form_end(form)}}
-            {{ choice }}
         </div>
         <div class="panel panel-default panel-table table-responsive">
             <div class="panel-heading">
@@ -31,7 +30,6 @@
                             <th>Hora</th>
                             <th>Metge</th>
                             <th>Pacient</th>
-                            <th><em class="fa fa-cog"></em></th>
                         </tr> 
                     </thead>
                     <tbody>
@@ -43,8 +41,8 @@
                                 {% if choice == 'Tots' or visites.tipusvisita.tipus == choice %}     
                                 <tr>
                                     <td align="center">
-                                        <a class="btn btn-default" href="{#{{ path('clinica_pani_modipacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-pencil"></em></a>
-                                        <a class="btn btn-danger" href="{#{{ path('clinica_pani_elimpacient',{'ref': visites.ref}) }}#}#"><em class="fa fa-trash"></em></a>
+                                        <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
+                                        <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
                                     </td>
                                     <td>{{ visites.ref }}</td>
                                     <td>{{ visites.data|date('d-m-Y') }}</td>
