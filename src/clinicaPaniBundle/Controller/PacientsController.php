@@ -11,7 +11,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class PacientsController extends Controller {
 
     public function vistaPacientAction() {
-        //return $this->render('clinicaPaniBundle:Default:index.html.twig');
         $pacients = $this->getDoctrine()->getRepository('clinicaPaniBundle:Client')->findAll();
         return $this->render('clinicaPaniBundle:Default:vpacients.html.twig', array(
                     'Pacients' => $pacients,
@@ -20,27 +19,6 @@ class PacientsController extends Controller {
     }
 
     public function afegirPacientAction(Request $req) {
-        //return $this->render('clinicaPaniBundle:Default:index.html.twig');
-//        $pacients = $this->getDoctrine()->getRepository('clinicaPaniBundle:Client')->findAll();
-//        return $this->render('clinicaPaniBundle:Default:vpacients.html.twig', array(
-//                    'Pacients' => $pacients,
-//                    'titol' => 'Pacients registrats'
-//        ));
-
-        /* $em = $this->getDoctrine()->getEntityManager();
-          $pacients = $em->getRepository("clinicaPaniBundle:Client");
-
-          $pcnt = $pacients->findOneBy(array('dni' => $dni)); */
-
-        ///if (!$req) {
-        /* $response = $this->render('clinicaPaniBundle:Default:404.html.twig', array(
-          'message' => 'No s\'ha pogut modificar el pacient, pacient no existent '
-          ));
-
-          $response->setStatusCode(404);
-
-          return $response; */
-        // else {
         $pacient = new Client();
         $form = $this->createFormBuilder($pacient)
                 ->add('dni', TextType::class, array('label' => 'DNI'))
@@ -52,12 +30,8 @@ class PacientsController extends Controller {
         $form->handleRequest($req);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
             $pacient = $form->getData();
 
-            // ... perform some action, such as saving the task to the database
-            // for example, if Category is a Doctrine entity, save it!
             $em = $this->getDoctrine()->getManager();
             $em->persist($pacient);
             $em->flush();
@@ -70,7 +44,7 @@ class PacientsController extends Controller {
         //}
     }
 
-    public function modificarPacientAction($dni,Request $req) {
+    public function modificarPacientAction($dni, Request $req) {
 
         $em = $this->getDoctrine()->getEntityManager();
         $pacients = $em->getRepository("clinicaPaniBundle:Client");
@@ -78,9 +52,7 @@ class PacientsController extends Controller {
         $pcnt = $pacients->findOneBy(array('dni' => $dni));
 
         if (!$pcnt) {
-            /* throw $this->createNotFoundException(
-              'No s\'ha trobat categoría per la id '.$id
-              ); */
+
             $response = $this->render('clinicaPaniBundle:Default:404.html.twig', array(
                 'message' => 'No s\'ha pogut trobar el pacient, pacient no existent '
             ));
@@ -90,21 +62,17 @@ class PacientsController extends Controller {
             return $response;
         } else {
             $form = $this->createFormBuilder($pcnt)
-                    ->add('dni', TextType::class, array('label' => 'DNI','data' => $pcnt->getDni()))
-                    ->add('nom', TextType::class, array('label' => 'Nom','data' => $pcnt->getNom()))
-                    ->add('cognom', TextType::class, array('label' => 'Cognom','data' => $pcnt->getCognom()))
-                    ->add('afegir', SubmitType::class, array('label' => 'Afegir Pacient'))
+                    ->add('dni', TextType::class, array('label' => 'DNI', 'data' => $pcnt->getDni()))
+                    ->add('nom', TextType::class, array('label' => 'Nom', 'data' => $pcnt->getNom()))
+                    ->add('cognom', TextType::class, array('label' => 'Cognom', 'data' => $pcnt->getCognom()))
+                    ->add('modificar', SubmitType::class, array('label' => 'Modificar Pacient'))
                     ->getForm();
 
             $form->handleRequest($req);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                // $form->getData() holds the submitted values
-                // but, the original `$task` variable has also been updated
                 $pcnt = $form->getData();
 
-                // ... perform some action, such as saving the task to the database
-                // for example, if Category is a Doctrine entity, save it!
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($pcnt);
                 $em->flush();
@@ -112,12 +80,10 @@ class PacientsController extends Controller {
                 return $this->redirectToRoute('clinica_pani_vistapacient');
             }
         }
-        
-        return $this->render('clinicaPaniBundle:Default:epacient.html.twig', array(
+
+        return $this->render('clinicaPaniBundle:Default:mpacient.html.twig', array(
                     'titol' => 'Modificar Pacient',
                     'form' => $form->createView()));
-
-        //return
     }
 
     public function eliminarPacientAction($dni) {
@@ -128,9 +94,6 @@ class PacientsController extends Controller {
         $pcnt = $pacients->findOneBy(array('dni' => $dni));
 
         if (!$pcnt) {
-            /* throw $this->createNotFoundException(
-              'No s\'ha trobat categoría per la id '.$id
-              ); */
             $response = $this->render('clinicaPaniBundle:Default:404.html.twig', array(
                 'message' => 'No s\'ha pogut essborrar el pacient, pacient no existent '
             ));
@@ -144,29 +107,6 @@ class PacientsController extends Controller {
             return $this->redirectToRoute('clinica_pani_vistapacient');
         }
         die();
-
-        //return
     }
 
-//    public function veureDetallsAction($ref) {
-//        //return $this->render('clinicaPaniBundle:Default:index.html.twig');
-//        $visita = $this->getDoctrine()->getRepository('clinicaPaniBundle:Visita')->findOneBy(array('ref' => $ref));
-//
-//        if (!$visita) {
-//            /* throw $this->createNotFoundException(
-//              'No s\'ha trobat categoría per la id '.$id
-//              ); */
-//            $response = $this->render('clinicaPaniBundle:Default:404.html.twig', array(
-//                'message' => 'No s\'ha trobat cap visita ' . $ref
-//            ));
-//
-//            $response->setStatusCode(404);
-//
-//            return $response;
-//        }
-//
-//        return $this->render('clinicaPaniBundle:Default:dtllsvisita.html.twig', array(
-//                    'ref' => 'Número de referència ' . $ref,
-//                    'visita' => $visita));
-//    }
 }
