@@ -42,12 +42,8 @@
                                 {% if choice == 'Tots' or visites.tipusvisita.tipus == choice %}     
                                 <tr>
                                     <td align="center">
-
-                                    {% if rol >= 88 %} 
                                         <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
                                         <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
-                                    {% endif %}
-
                                     </td>
                                     <td>{{ visites.ref }}</td>
                                     <td>{{ visites.data|date('d-m-Y') }}</td>
