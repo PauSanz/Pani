@@ -22,6 +22,7 @@ class PacientsController extends Controller {
         $pacients = $this->getDoctrine()->getRepository('clinicaPaniBundle:Client')->findAll();
         return $this->render('clinicaPaniBundle:Default:vpacients.html.twig', array(
                     'Pacients' => $pacients,
+                    'rol' => $_SESSION["rol"],
                     'titol' => 'Pacients registrats'
         ));
     }

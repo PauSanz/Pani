@@ -24,6 +24,7 @@ class MetgesController extends Controller {
         $metges = $this->getDoctrine()->getRepository('clinicaPaniBundle:Metge')->findAll();
         return $this->render('clinicaPaniBundle:Default:vmetges.html.twig', array(
                     'Metges' => $metges,
+                    'rol' => $_SESSION["rol"],
                     'titol' => 'Metges registrats'
         ));
     }

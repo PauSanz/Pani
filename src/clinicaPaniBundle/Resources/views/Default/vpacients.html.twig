@@ -30,8 +30,10 @@
                             {% for pacient in Pacients %}
                             <tr>
                                 <td align="center">
+                                    {% if rol >= 88 %} 
                                     <a class="btn btn-default" href="{{ path('clinica_pani_modipacient',{'dni': pacient.dni}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     <a class="btn btn-danger" href="{{ path('clinica_pani_elimpacient',{'dni': pacient.dni}) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    {% endif %}
                                 </td>
                                 <td>{{ pacient.dni }}</td>
                                 <td>{{ pacient.nom }}</td>
