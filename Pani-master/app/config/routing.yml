@@ -1,7 +1,0 @@
-clinica_pani:
-    resource: "@clinicaPaniBundle/Resources/config/routing.yml"
-    prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
