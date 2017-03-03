@@ -11,9 +11,18 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class PacientsController extends Controller {
 
     public function vistaPacientAction() {
+        if (session_status() == PHP_SESSION_ACTIVE) {
+        } else {
+            session_start();
+        }
+        if (!isset($_SESSION['username']) || $_SESSION['username'] == null ) {
+         return $this->redirectToRoute('login');   
+        }
+        
         $pacients = $this->getDoctrine()->getRepository('clinicaPaniBundle:Client')->findAll();
         return $this->render('clinicaPaniBundle:Default:vpacients.html.twig', array(
                     'Pacients' => $pacients,
+                    'rol' => $_SESSION["rol"],
                     'titol' => 'Pacients registrats'
         ));
     }
