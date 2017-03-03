@@ -9,22 +9,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class MetgesController extends Controller {
-    
 
     public function vistaMetgeAction() {
-        if (session_status() == PHP_SESSION_ACTIVE) {
-        } else {
-            session_start();
-        }
-        if (!isset($_SESSION['username']) || $_SESSION['username'] == null ) {
-         return $this->redirectToRoute('login');   
-        }
-        
-        
         $metges = $this->getDoctrine()->getRepository('clinicaPaniBundle:Metge')->findAll();
         return $this->render('clinicaPaniBundle:Default:vmetges.html.twig', array(
                     'Metges' => $metges,
-                    'rol' => $_SESSION["rol"],
                     'titol' => 'Metges registrats'
         ));
     }

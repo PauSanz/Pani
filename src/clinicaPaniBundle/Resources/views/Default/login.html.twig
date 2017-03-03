@@ -3,8 +3,7 @@
 {% block page_content %}
     <div class="container">
         <h1> Inicia Sessió </h1>
-        
-       {# {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
 
             {{app.usuari.usuari}}  {{ app.usuari.rol }}     
 
@@ -19,12 +18,6 @@
             <input type="hidden" name="{{ path('clinica_pani_homepage') }}" />
 
             <button type="submit">login</button>
-        </form>#}
-       
-       {{ form_start(form)}}
-       {{ form_widget(form)}}
-       {{ form_end(form)}}
-       
-       
+        </form>
     </div>
 {% endblock %}

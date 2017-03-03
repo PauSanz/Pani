@@ -134,8 +134,5 @@ class Usuari implements UserInterface{
     public function eraseCredentials() {
         
     }
-    
-    public function getPassword() {
-        
-    }
+
 }
