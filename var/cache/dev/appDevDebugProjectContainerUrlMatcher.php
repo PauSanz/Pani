@@ -114,9 +114,93 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'clinicaPaniBundle\\Controller\\DefaultController::indexAction',  '_route' => 'clinica_pani_homepage',);
         }
 
-        // clinica_pani_vistametge
-        if ($pathinfo === '/vmetge') {
-            return array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::vistaMetgeAction',  '_route' => 'clinica_pani_vistametge',);
+        if (0 === strpos($pathinfo, '/v')) {
+            // clinica_pani_vistametge
+            if ($pathinfo === '/vmetge') {
+                return array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::vistaMetgeAction',  '_route' => 'clinica_pani_vistametge',);
+            }
+
+            // clinica_pani_vistapacient
+            if ($pathinfo === '/vpacient') {
+                return array (  '_controller' => 'clinicaPaniBundle\\Controller\\PacientsController::vistaPacientAction',  '_route' => 'clinica_pani_vistapacient',);
+            }
+
+            // clinica_pani_vistavisites
+            if ($pathinfo === '/vvisites') {
+                return array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::vistaVisitaAction',  '_route' => 'clinica_pani_vistavisites',);
+            }
+
+        }
+
+        // clinica_pani_detallsvisita
+        if (0 === strpos($pathinfo, '/dtllsvisita') && preg_match('#^/dtllsvisita/(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_detallsvisita')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::veureDetallsAction',));
+        }
+
+        // clinica_pani_afgrmetge
+        if ($pathinfo === '/afgrmetge') {
+            return array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::afegirMetgeAction',  '_route' => 'clinica_pani_afgrmetge',);
+        }
+
+        // clinica_pani_modimetge
+        if (0 === strpos($pathinfo, '/modimetge') && preg_match('#^/modimetge/(?P<dni>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_modimetge')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::modificarMetgeAction',));
+        }
+
+        // clinica_pani_elimmetge
+        if (0 === strpos($pathinfo, '/elmnmetge') && preg_match('#^/elmnmetge/(?P<dni>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_elimmetge')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\MetgesController::eliminarMetgeAction',));
+        }
+
+        // clinica_pani_afgrpacient
+        if ($pathinfo === '/afgrpacient') {
+            return array (  '_controller' => 'clinicaPaniBundle\\Controller\\PacientsController::afegirPacientAction',  '_route' => 'clinica_pani_afgrpacient',);
+        }
+
+        // clinica_pani_modipacient
+        if (0 === strpos($pathinfo, '/modipacient') && preg_match('#^/modipacient/(?P<dni>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_modipacient')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\PacientsController::modificarPacientAction',));
+        }
+
+        // clinica_pani_elimpacient
+        if (0 === strpos($pathinfo, '/elmnpacient') && preg_match('#^/elmnpacient/(?P<dni>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_elimpacient')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\PacientsController::eliminarPacientAction',));
+        }
+
+        // clinica_pani_afgrvisita
+        if ($pathinfo === '/afgrvisita') {
+            return array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::afegirVisitaAction',  '_route' => 'clinica_pani_afgrvisita',);
+        }
+
+        // clinica_pani_modivisita
+        if (0 === strpos($pathinfo, '/modivisita') && preg_match('#^/modivisita/(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_modivisita')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::modificarVisitaAction',));
+        }
+
+        // clinica_pani_elimvisita
+        if (0 === strpos($pathinfo, '/elimvisita') && preg_match('#^/elimvisita/(?P<ref>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'clinica_pani_elimvisita')), array (  '_controller' => 'clinicaPaniBundle\\Controller\\VisitesController::eliminarVisitaAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            if (0 === strpos($pathinfo, '/login')) {
+                // login
+                if ($pathinfo === '/login') {
+                    return array (  '_controller' => 'clinicaPaniBundle\\Controller\\UsuariController::loginAction',  '_route' => 'login',);
+                }
+
+                // login_check
+                if ($pathinfo === '/login_check') {
+                    return array('_route' => 'login_check');
+                }
+
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
+            }
+
         }
 
         // homepage
