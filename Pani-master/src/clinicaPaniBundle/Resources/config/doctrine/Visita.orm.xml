@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="clinicaPaniBundle\Entity\Visita" table="visita">
+    <indexes>
+      <index name="tipusVisita" columns="tipusVisita"/>
+      <index name="metgeVisitat" columns="metgeVisitat"/>
+      <index name="pacientVisitat" columns="pacientVisitat"/>
+    </indexes>
+    <id name="ref" type="integer" column="ref">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="data" type="date" column="data" nullable="false"/>
+    <field name="hora" type="time" column="hora" nullable="false"/>
+    <field name="descripcio" type="string" column="descripcio" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="tipusvisita" target-entity="Tipusvisita" fetch="LAZY">
+      <join-columns>
+        <join-column name="tipusVisita" referenced-column-name="tipus"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="metgevisitat" target-entity="Metge" fetch="LAZY">
+      <join-columns>
+        <join-column name="metgeVisitat" referenced-column-name="dni"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="pacientvisitat" target-entity="Client" fetch="LAZY">
+      <join-columns>
+        <join-column name="pacientVisitat" referenced-column-name="dni"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

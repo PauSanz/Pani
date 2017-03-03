@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="clinicaPaniBundle\Entity\Tipusvisita" table="tipusvisita">
+    <indexes>
+      <index name="tipus" columns="tipus"/>
+      <index name="tipus_2" columns="tipus"/>
+    </indexes>
+    <id name="tipus" type="string" column="tipus" length="255">
+      <generator strategy="IDENTITY"/>
+    </id>
+  </entity>
+</doctrine-mapping>
