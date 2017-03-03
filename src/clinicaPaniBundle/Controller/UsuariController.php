@@ -62,6 +62,7 @@ class UsuariController extends Controller {
                     'titol' => 'Log in',
                     'form' => $form->createView()));
         
+
     }
 
 }

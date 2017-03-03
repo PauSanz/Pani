@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class PacientsController extends Controller {
 
     public function vistaPacientAction() {
+
         if (session_status() == PHP_SESSION_ACTIVE) {
         } else {
             session_start();

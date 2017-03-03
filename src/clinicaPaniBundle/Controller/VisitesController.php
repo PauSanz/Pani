@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\TimeType;
 class VisitesController extends Controller {
 
     public function vistaVisitaAction(Request $req) {
+      
         if (session_status() == PHP_SESSION_ACTIVE) {
         } else {
             session_start();
@@ -26,6 +27,7 @@ class VisitesController extends Controller {
          return $this->redirectToRoute('login');   
         }
         
+
         $imprimir = 'Tots';
         $form = $this->createFormBuilder()
                 ->add('Filtrar', ChoiceType::class, array(
