@@ -135,4 +135,9 @@ class Usuari implements UserInterface{
         
     }
 
+    
+    public function getPassword() {
+        
+    }
+
 }
