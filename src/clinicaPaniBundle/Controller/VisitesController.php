@@ -19,13 +19,14 @@ class VisitesController extends Controller {
 
     public function vistaVisitaAction(Request $req) {
         if (session_status() == PHP_SESSION_ACTIVE) {
+            
         } else {
             session_start();
         }
-        if (!isset($_SESSION['username']) || $_SESSION['username'] == null ) {
-         return $this->redirectToRoute('login');   
+        if (!isset($_SESSION['username']) || $_SESSION['username'] == null) {
+            return $this->redirectToRoute('login');
         }
-        
+
         $imprimir = 'Tots';
         $form = $this->createFormBuilder()
                 ->add('Filtrar', ChoiceType::class, array(
@@ -81,6 +82,8 @@ class VisitesController extends Controller {
     public function afegirVisitaAction(Request $req) {
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
+        $metge = $em->getRepository("clinicaPaniBundle:Metge");
+        $pacient = $em->getRepository("clinicaPaniBundle:Client");
         $form = $this->createFormBuilder()
                 ->add('data', DateType::class, array('label' => 'Data'))
                 ->add('hora', TimeType::class, array('label' => 'Hora'))
