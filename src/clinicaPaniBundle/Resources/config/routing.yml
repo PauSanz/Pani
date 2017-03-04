@@ -80,7 +80,7 @@ login:
     defaults: { _controller: clinicaPaniBundle:Usuari:login }
 logout:
     path:     /logout
-    defaults: { _controller: clinicaPaniBundle:Usuari:login }
+    defaults: { _controller: clinicaPaniBundle:Usuari:logout }
  
 #login_check:
 #    path: /login_check

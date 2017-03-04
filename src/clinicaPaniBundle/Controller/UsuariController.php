@@ -14,7 +14,7 @@ class UsuariController extends Controller {
 
     public function loginAction(Request $req) {
 
-        
+
         if ($this->get('session')->isStarted()) {
             
         } else {
@@ -57,7 +57,7 @@ class UsuariController extends Controller {
     }
 
     public function logoutAction() {
-        session_destroy();
+        $this->get('session')->clear();
         return $this->redirectToRoute('login');
     }
 
