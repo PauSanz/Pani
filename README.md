@@ -71,12 +71,12 @@ Enjoy!
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPTES D'USUARIS >>>>>>>>>>>>>>>>>>>>>
 
-* Administrador:
+* **Administrador:**
         user: pau
         pw: 1234 (Rol: 99)
-* Medico:
+* **Medico:**
         user: manel
         pw: 1234 (Rol 88)
-* Consultor:
+* **Consultor:**
         user: dani
         pw: 1234 (Rol 77)
