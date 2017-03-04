@@ -4,6 +4,7 @@ namespace clinicaPaniBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use clinicaPaniBundle\Entity\Usuari;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -12,6 +13,14 @@ use Symfony\Component\HttpFoundation\Request;
 class UsuariController extends Controller {
 
     public function loginAction(Request $req) {
+
+        
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
 
 //        Formulari de log in
         $form = $this->createFormBuilder()
@@ -33,8 +42,11 @@ class UsuariController extends Controller {
             $usuari = $users->findOneBy(array('usuari' => $form->get('usuari')->getData()));
 
             if ($usuari != null && $usuari->getPass() == $form->get('contranseya')->getData()) {
-                $_SESSION["username"] = $usuari->getUsuari();
-                $_SESSION["rol"] = $usuari->getRol();
+//                $_SESSION["username"] = $usuari->getUsuari();
+//                $_SESSION["rol"] = $usuari->getRol();
+                $session = $this->get('session');
+                $session->set('username', $usuari->getUsuari());
+                $session->set('rol', $usuari->getRol());
                 return $this->redirectToRoute('clinica_pani_homepage');
             }
         }
