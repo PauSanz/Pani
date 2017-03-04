@@ -27,6 +27,7 @@ class VisitesController extends Controller {
             $session = new Session();
             $session->start();
         }
+
         $session = $this->get('session');
         //Comprovar si estas logejat
         if ($session->has('username')) {
@@ -90,6 +91,8 @@ class VisitesController extends Controller {
     public function afegirVisitaAction(Request $req) {
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
+        $metge = $em->getRepository("clinicaPaniBundle:Metge");
+        $pacient = $em->getRepository("clinicaPaniBundle:Client");
         $form = $this->createFormBuilder()
                 ->add('data', DateType::class, array('label' => 'Data'))
                 ->add('hora', TimeType::class, array('label' => 'Hora'))
