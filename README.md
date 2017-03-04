@@ -70,9 +70,17 @@ Enjoy!
 
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPTES D'USUARIS >>>>>>>>>>>>>>>>>>>>>
-Administrador:
-        user: pau
-        pw: 1234 (Rol: 99)
-Consultor:
-        user: dani
-        pw: 1234 (Rol 77)
+
+* **Administrador:**
+
+ * **user:** pau
+ * **pw:** 1234 (Rol: 99)
+
+* **Medico:**
+
+ * **user:** manel
+ * **pw:** 1234 (Rol 88)
+
+* **Consultor:**
+ * **user:** dani
+ * **pw:** 1234 (Rol 77)
