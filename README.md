@@ -79,7 +79,7 @@ Enjoy!
 * **Medico:**
 
  * **user:** manel
- * **pw: 1234 (Rol 88)
+ * **pw:** 1234 (Rol 88)
 
 * **Consultor:**
  * **user:** dani
