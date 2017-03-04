@@ -34,7 +34,7 @@ class VisitesController extends Controller {
                         'Concertada' => 'Concertada',
                         'Tractament' => 'Tractament',
                         'Urgent' => 'Urgent')))
-                ->add('afegir', SubmitType::class, array('label' => 'Filtrar'))
+                ->add('filtrar', SubmitType::class, array('label' => 'Filtrar'))
                 ->getForm();
 
 
