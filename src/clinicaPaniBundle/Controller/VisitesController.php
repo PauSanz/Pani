@@ -34,7 +34,7 @@ class VisitesController extends Controller {
                         'Concertada' => 'Concertada',
                         'Tractament' => 'Tractament',
                         'Urgent' => 'Urgent')))
-                ->add('afegir', SubmitType::class, array('label' => 'Filtrar'))
+                ->add('filtrar', SubmitType::class, array('label' => 'Filtrar'))
                 ->getForm();
 
 
@@ -74,7 +74,7 @@ class VisitesController extends Controller {
         }
 
         return $this->render('clinicaPaniBundle:Default:dtllsvisita.html.twig', array(
-                    'titol' => 'Detalls de la visita referència núm: ' . $ref,
+                    'titol' => 'Detalls de la visita núm: ' . $ref,
                     'visita' => $visita));
     }
 

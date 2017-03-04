@@ -9,6 +9,7 @@
         {% block stylesheets %}
             <!-- Bootstrap Core CSS -->
             <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <!-- Font Awesome CSS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <!-- Custom CSS -->
             <link href="{{ asset('css/pani-home.css') }}" rel="stylesheet">
@@ -42,12 +43,10 @@
                                 </li>
                                 <li><a href="{{ path('clinica_pani_vistapacient') }}">Pacients</a>
                                 </li>
-                                {#<li><a href="{{ path('clinica_pani_vistavisita') }}">Visites</a>
-                                </li>#}
-
                                 <li><a href="{{ path('clinica_pani_vistavisites') }}">Llistat de Visites</a>
                                 </li>
-
+                                <li><a href="{{ path('logout') }}" class="text-right">Tancar Sessió!</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -60,7 +59,7 @@
                     <!-- Heading Row -->
                     <div class="row">
                         <div class="col-md-8">
-                            <img class="img-responsive img-rounded" src="{{ asset('images/1.jpg') }}" alt="">
+                            <img class="img-responsive img-rounded" src="{{ asset('images/1.jpg') }}" alt="main_img">
                         </div>
                         <!-- /.col-md-8 -->
                         <div class="col-md-4">
@@ -117,7 +116,6 @@
         {% block javascripts %}
             <!-- jQuery -->
             <script src="{{ asset('js/jquery.js') }}"></script>
-
             <!-- Bootstrap Core JavaScript -->
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         {% endblock %}    

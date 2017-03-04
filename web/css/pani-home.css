@@ -287,3 +287,16 @@ used to vertically center elements, may need modification if you're not using de
     background-color: rgba(0, 129, 250, 1)!important;
     color: white!important;
 }
+
+
+/* FILTRE AMB IMATGES */
+
+
+.mesura {
+    height: 300px!important;
+}
+
+.mesuraDivVisita {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
