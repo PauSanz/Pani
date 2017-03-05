@@ -8,16 +8,35 @@ use clinicaPaniBundle\Entity\Visita;
 use clinicaPaniBundle\Entity\Tipusvisita;
 use clinicaPaniBundle\Entity\Metge;
 use clinicaPaniBundle\Entity\Client;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class VisitesController extends Controller {
 
     public function vistaVisitaAction(Request $req) {
+
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
         $imprimir = 'Tots';
         $form = $this->createFormBuilder()
                 ->add('Filtrar', ChoiceType::class, array(
@@ -26,7 +45,7 @@ class VisitesController extends Controller {
                         'Concertada' => 'Concertada',
                         'Tractament' => 'Tractament',
                         'Urgent' => 'Urgent')))
-                ->add('afegir', SubmitType::class, array('label' => 'Filtrar'))
+                ->add('filtrar', SubmitType::class, array('label' => 'Filtrar'))
                 ->getForm();
 
 
@@ -46,6 +65,7 @@ class VisitesController extends Controller {
                     'Visites' => $visites,
                     'titol' => 'Visites registrades',
                     'choice' => $imprimir,
+                    'rol' => $session->get('rol'),
                     'form' => $form->createView()
         ));
     }
@@ -65,13 +85,14 @@ class VisitesController extends Controller {
         }
 
         return $this->render('clinicaPaniBundle:Default:dtllsvisita.html.twig', array(
-                    'titol' => 'Detalls de la visita referència núm: ' . $ref,
+                    'titol' => 'Detalls de la visita núm: ' . $ref,
                     'visita' => $visita));
     }
 
     public function afegirVisitaAction(Request $req) {
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
+        $pacient = $em->getRepository("clinicaPaniBundle:Client");
         $form = $this->createFormBuilder()
                 ->add('data', DateType::class, array('label' => 'Data'))
                 ->add('hora', TimeType::class, array('label' => 'Hora'))
@@ -82,8 +103,26 @@ class VisitesController extends Controller {
                         'Concertada' => $tipusvisita->findOneBy(array('tipus' => 'Concertada')),
                         'Tractament' => $tipusvisita->findOneBy(array('tipus' => 'Tractament')),
                         'Urgent' => $tipusvisita->findOneBy(array('tipus' => 'Urgent')))))
-                ->add('metgeVisitat', TextType::class, array('label' => 'DNI Metge'))
-                ->add('pacientVisitat', TextType::class, array('label' => 'DNI Pacient'))
+                ->add('metgeVisitat', EntityType::class, array(
+                    'label' => 'Metge',
+                    'mapped' => false,
+                    'required' => true,
+                    'class' => 'clinicaPaniBundle\Entity\Metge',
+                    'choice_label' => 'nom',
+                    'expanded' => false,
+                    'multiple' => false,
+                    'placeholder' => 'Escull un metge',
+                ))
+                ->add('pacientVisitat', EntityType::class, array(
+                    'label' => 'Pacient',
+                    'mapped' => false,
+                    'required' => true,
+                    'class' => 'clinicaPaniBundle\Entity\Client',
+                    'choice_label' => 'nom',
+                    'expanded' => false,
+                    'multiple' => false,
+                    'placeholder' => 'Escull un pacient',
+                ))
                 ->add('afegir', SubmitType::class, array('label' => 'Afegir Visita'))
                 ->getForm();
 

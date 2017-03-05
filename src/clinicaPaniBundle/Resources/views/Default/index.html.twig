@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}Welcome to our cosa!{% endblock %}</title>
         {% block stylesheets %}
             <!-- Bootstrap Core CSS -->
             <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <!-- Font Awesome CSS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <!-- Custom CSS -->
             <link href="{{ asset('css/pani-home.css') }}" rel="stylesheet">
@@ -23,7 +25,6 @@
 
     <body>
         {% block body %}
-
             {% block navigation %}
 
                 <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -37,16 +38,16 @@
                         </div>
                         <div class="collapse navbar-collapse navbar-menubuilder">
                             <ul class="nav navbar-nav navbar-left">
-                                <li><a href="{{ path('clinica_pani_vistametge') }}">Metges</a>
-                                </li>
-                                <li><a href="{{ path('clinica_pani_vistapacient') }}">Pacients</a>
-                                </li>
-                                {#<li><a href="{{ path('clinica_pani_vistavisita') }}">Visites</a>
-                                </li>#}
-
+                                {#{% if rol == 88 | rol == 99 %}#}
+                                    <li><a href="{{ path('clinica_pani_vistametge') }}">Metges</a>
+                                    </li>                               
+                                    <li><a href="{{ path('clinica_pani_vistapacient') }}">Pacients</a>
+                                    </li>
+                                {#{% endif %}#}
                                 <li><a href="{{ path('clinica_pani_vistavisites') }}">Llistat de Visites</a>
                                 </li>
-
+                                <li><a href="{{ path('logout') }}" class="text-right">Tancar Sessió!</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -59,7 +60,7 @@
                     <!-- Heading Row -->
                     <div class="row">
                         <div class="col-md-8">
-                            <img class="img-responsive img-rounded" src="{{ asset('images/1.jpg') }}" alt="">
+                            <img class="img-responsive img-rounded" src="{{ asset('images/1.jpg') }}" alt="main_img">
                         </div>
                         <!-- /.col-md-8 -->
                         <div class="col-md-4">
@@ -102,24 +103,45 @@
 
                 </div>   
             {% endblock %}
-            <footer>
+            {#<footer>
                 <div class="footer-bottom">
                     <div class="container">
                         <p class="pull-left"> Clinica Pani </p>
                     </div>
                 </div>
                 <!--/.footer-bottom--> 
+            </footer>#}
+            <footer class="footer-basic-centered">
+
+                <p class="footer-company-motto">Clínica Pani.</p>
+
+                <p class="footer-links">
+                    <a href="#">Inici</a>
+                    ·
+                    <a href="#">Blog</a>
+                    ·
+                    <a href="#">Tarifes</a>
+                    ·
+                    <a href="#">Qui Som</a>
+                    ·
+                    <a href="#">Faq</a>
+                    ·
+                    <a href="#">Contacte</a>
+                </p>
+
+                <p class="footer-company-name">Clínica Pani &copy; 2017</p>
+
             </footer>
+
 
             <!-- /.container -->
         {% endblock %}
         {% block javascripts %}
             <!-- jQuery -->
             <script src="{{ asset('js/jquery.js') }}"></script>
-
             <!-- Bootstrap Core JavaScript -->
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        {% endblock %}
+        {% endblock %}    
     </body>
 </html>
 

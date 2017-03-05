@@ -1,23 +1,49 @@
-{% extends "clinicaPaniBundle:Default:index.html.twig " %}
-{% block title %}Visites{% endblock %}
-{% block page_content %}
-    <div class="container">
-        <h1> Inicia Sessió </h1>
-        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            {{app.usuari.usuari}}  {{ app.usuari.rol }}     
+        <title>{% block title %}Iniciar sessió{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <!-- Font Awesome CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!-- Google Fonts -->
+            <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+            <!-- Custom CSS -->
+            {#<link href="{{ asset('css/pani-home.css') }}" rel="stylesheet">#}
+            <link href="{{ asset('css/pani-login.css') }}" rel="stylesheet">
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+    </head>
+    {% block page_content %}
+        <body style="background-image: url('../images/wallpaperLogin.png');">
+            <div class="container">
+                <div class="row main">
+                    <div class="panel-heading">
+                        <div class="panel-title text-center">
+                            <h1 class="title">Iniciar sessió</h1>
+                            <hr />
+                        </div>
+                    </div> 
+                    <div class="main-login main-center">                  
+                        {{ form_start(form)}}
+                        {{ form_widget(form)}}
+                        {{ form_end(form)}}
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        </body>
+    {% endblock %}
 
-        {%endif%}
-
-        <form action="{{ path('login_check') }}" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" />
-            <input type="hidden" name="{{ path('clinica_pani_homepage') }}" />
-
-            <button type="submit">login</button>
-        </form>
-    </div>
-{% endblock %}
+</html>

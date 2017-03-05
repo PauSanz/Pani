@@ -4,6 +4,7 @@ namespace clinicaPaniBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use clinicaPaniBundle\Entity\Metge;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -11,9 +12,27 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class MetgesController extends Controller {
 
     public function vistaMetgeAction() {
+        
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
+
         $metges = $this->getDoctrine()->getRepository('clinicaPaniBundle:Metge')->findAll();
         return $this->render('clinicaPaniBundle:Default:vmetges.html.twig', array(
                     'Metges' => $metges,
+                    'rol' => $session->get('rol'),
                     'titol' => 'Metges registrats'
         ));
     }
@@ -43,7 +62,6 @@ class MetgesController extends Controller {
         return $this->render('clinicaPaniBundle:Default:ametge.html.twig', array(
                     'titol' => 'Afegir Metge',
                     'form' => $form->createView()));
-        
     }
 
     public function modificarMetgeAction($dni, Request $req) {

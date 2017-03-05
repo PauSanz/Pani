@@ -30,8 +30,10 @@
                             {% for metge in Metges %}
                             <tr>
                                 <td align="center">
+                                    {% if rol >= 99 %} 
                                     <a class="btn btn-default" href="{{ path('clinica_pani_modimetge',{'dni': metge.dni}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimmetge',{'dni': metge.dni}) }}"><i class="fa fa-trash" aria-hidden="true"></i>
+                                    <a class="btn btn-danger" href="{{ path('clinica_pani_elimmetge',{'dni': metge.dni}) }}" onclick="return confirm('Confirmació d\'eliminació del metge.')"><i class="fa fa-trash" aria-hidden="true"></i>
+                                    {% endif %}
                                     </a>
                                 </td>
                                 <td>{{ metge.dni }}</td>

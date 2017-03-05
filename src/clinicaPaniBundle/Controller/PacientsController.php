@@ -4,6 +4,7 @@ namespace clinicaPaniBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use clinicaPaniBundle\Entity\Client;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -11,9 +12,26 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class PacientsController extends Controller {
 
     public function vistaPacientAction() {
+
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
         $pacients = $this->getDoctrine()->getRepository('clinicaPaniBundle:Client')->findAll();
         return $this->render('clinicaPaniBundle:Default:vpacients.html.twig', array(
                     'Pacients' => $pacients,
+                    'rol' => $session->get('rol'),
                     'titol' => 'Pacients registrats'
         ));
     }

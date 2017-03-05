@@ -78,8 +78,11 @@ clinica_pani_elimvisita:
 login:
     path:     /login
     defaults: { _controller: clinicaPaniBundle:Usuari:login }
- 
-login_check:
-    path: /login_check
 logout:
-    path: /logout
+    path:     /logout
+    defaults: { _controller: clinicaPaniBundle:Usuari:logout }
+ 
+#login_check:
+#    path: /login_check
+#logout:
+#    path: /logout

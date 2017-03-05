@@ -2,8 +2,10 @@
 {% block title %}Pacients{% endblock %}
 {% block page_content %}
     <div class="container">
-        <h1> {{ titol }}</h1>    
-        <div>
+        <div class="page-header">
+            <h1> {{ titol }}</h1>
+        </div>      
+        <div> 
             {{ form_start(form)}}
             {{ form_widget(form)}}
             {{ form_end(form)}}
