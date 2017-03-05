@@ -43,7 +43,7 @@
                                     <tr>
                                         <td align="center">
                                             <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
-                                            <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
+                                            <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}" onclick="return confirm('Confirmació d\'eliminació de la visita.')"><em class="fa fa-trash"></em></a>
                                         </td>
                                         <td>{{ visites.ref }}</td>
                                         <td>{{ visites.data|date('d-m-Y') }}</td>
@@ -78,7 +78,7 @@
                             <div class="text-center mesuraDivVisita" style="margin-top: 15px; margin-bottom: 15px;">
 
                                 <a class="btn btn-default" href="{{ path('clinica_pani_modivisita',{'ref': visites.ref}) }}"><em class="fa fa-pencil"></em></a>
-                                <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}"><em class="fa fa-trash"></em></a>
+                                <a class="btn btn-danger" href="{{ path('clinica_pani_elimvisita',{'ref': visites.ref}) }}" onclick="return confirm('Confirmació d\'eliminació de la visita.')"><em class="fa fa-trash"></em></a>
 
                             </div>
                         {% endif %}
