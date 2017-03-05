@@ -12,10 +12,10 @@
             <!-- Font Awesome CSS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <!-- Google Fonts -->
-	    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-	    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
             <!-- Custom CSS -->
-            <link href="{{ asset('css/pani-home.css') }}" rel="stylesheet">
+            {#<link href="{{ asset('css/pani-home.css') }}" rel="stylesheet">#}
             <link href="{{ asset('css/pani-login.css') }}" rel="stylesheet">
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,32 +26,24 @@
         {% endblock %}
     </head>
     {% block page_content %}
-
-        <div class="container">
-            <div class="row main">
-                <div class="panel-heading">
-                    <div class="panel-title text-center">
-                        <h1 class="title">Iniciar sessió</h1>
-                        <hr />
+        <body style="background-image: url('../images/wallpaperLogin.png');">
+            <div class="container">
+                <div class="row main">
+                    <div class="panel-heading">
+                        <div class="panel-title text-center">
+                            <h1 class="title">Iniciar sessió</h1>
+                            <hr />
+                        </div>
+                    </div> 
+                    <div class="main-login main-center">                  
+                        {{ form_start(form)}}
+                        {{ form_widget(form)}}
+                        {{ form_end(form)}}
                     </div>
-                </div> 
-                <div class="main-login main-center">
-                    
-            {{ form_start(form)}}
-            {{ form_widget(form)}}
-            {{ form_end(form)}}
                 </div>
             </div>
-        </div>
-
-        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-        <div class="container">
-
-
-
-
-
-        </div>
+            <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        </body>
     {% endblock %}
 
 </html>
