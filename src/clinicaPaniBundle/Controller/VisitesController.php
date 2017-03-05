@@ -72,6 +72,21 @@ class VisitesController extends Controller {
 
     public function veureDetallsAction($ref) {
 
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
         $visita = $this->getDoctrine()->getRepository('clinicaPaniBundle:Visita')->findOneBy(array('ref' => $ref));
 
         if (!$visita) {
@@ -90,6 +105,22 @@ class VisitesController extends Controller {
     }
 
     public function afegirVisitaAction(Request $req) {
+
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
         $pacient = $em->getRepository("clinicaPaniBundle:Client");
@@ -165,6 +196,21 @@ class VisitesController extends Controller {
 
     public function modificarVisitaAction($ref, Request $req) {
 
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
         $em = $this->getDoctrine()->getEntityManager();
         $visites = $em->getRepository("clinicaPaniBundle:Visita");
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
@@ -239,6 +285,21 @@ class VisitesController extends Controller {
     }
 
     public function eliminarVisitaAction($ref) {
+
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
 
         $em = $this->getDoctrine()->getEntityManager();
         $visites = $em->getRepository("clinicaPaniBundle:Visita");
