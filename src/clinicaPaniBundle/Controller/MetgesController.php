@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class MetgesController extends Controller {
 
     public function vistaMetgeAction() {
-        
+
         //Comprovar si existeix sessió
         if ($this->get('session')->isStarted()) {
             
@@ -38,6 +38,20 @@ class MetgesController extends Controller {
     }
 
     public function afegirMetgeAction(Request $req) {
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
         $metge = new Metge();
         $form = $this->createFormBuilder($metge)
                 ->add('dni', TextType::class, array('label' => 'DNI'))
@@ -65,7 +79,20 @@ class MetgesController extends Controller {
     }
 
     public function modificarMetgeAction($dni, Request $req) {
-
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
         $em = $this->getDoctrine()->getEntityManager();
         $metges = $em->getRepository("clinicaPaniBundle:Metge");
 
@@ -109,7 +136,20 @@ class MetgesController extends Controller {
     }
 
     public function eliminarMetgeAction($dni) {
-
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
         $em = $this->getDoctrine()->getEntityManager();
         $metges = $em->getRepository("clinicaPaniBundle:Metge");
 
