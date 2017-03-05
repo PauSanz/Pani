@@ -42,8 +42,6 @@ class UsuariController extends Controller {
             $usuari = $users->findOneBy(array('usuari' => $form->get('usuari')->getData()));
 
             if ($usuari != null && $usuari->getPass() == $form->get('contranseya')->getData()) {
-//                $_SESSION["username"] = $usuari->getUsuari();
-//                $_SESSION["rol"] = $usuari->getRol();
                 $session = $this->get('session');
                 $session->set('username', $usuari->getUsuari());
                 $session->set('rol', $usuari->getRol());
@@ -57,7 +55,18 @@ class UsuariController extends Controller {
     }
 
     public function logoutAction() {
-        $this->get('session')->clear();
+        $session = $this->get('session');
+//
+//        $session->getName('username');
+        $session->start();
+        $session->invalidate();
+
+
+
+//        $session = $this->get('session');
+//        $session->start();
+////        $session->invalidate();
+//        $session->clear();
         return $this->redirectToRoute('login');
     }
 
