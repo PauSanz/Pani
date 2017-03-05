@@ -120,6 +120,9 @@ class VisitesController extends Controller {
         } else {
             return $this->redirectToRoute('login');
         }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
+        }
 
         $em = $this->getDoctrine()->getEntityManager();
         $tipusvisita = $em->getRepository("clinicaPaniBundle:Tipusvisita");
@@ -210,6 +213,9 @@ class VisitesController extends Controller {
         } else {
             return $this->redirectToRoute('login');
         }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
+        }
 
         $em = $this->getDoctrine()->getEntityManager();
         $visites = $em->getRepository("clinicaPaniBundle:Visita");
@@ -299,6 +305,9 @@ class VisitesController extends Controller {
             
         } else {
             return $this->redirectToRoute('login');
+        }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
         }
 
         $em = $this->getDoctrine()->getEntityManager();

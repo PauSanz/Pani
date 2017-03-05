@@ -51,6 +51,9 @@ class PacientsController extends Controller {
         } else {
             return $this->redirectToRoute('login');
         }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
+        }
         $pacient = new Client();
         $form = $this->createFormBuilder($pacient)
                 ->add('dni', TextType::class, array('label' => 'DNI'))
@@ -90,6 +93,9 @@ class PacientsController extends Controller {
             
         } else {
             return $this->redirectToRoute('login');
+        }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
         }
 
         $em = $this->getDoctrine()->getEntityManager();
@@ -146,6 +152,9 @@ class PacientsController extends Controller {
             
         } else {
             return $this->redirectToRoute('login');
+        }
+        if ($session->get('rol') < 88) {
+            return $this->redirectToRoute('clinica_pani_homepage');
         }
 
         $em = $this->getDoctrine()->getEntityManager();
