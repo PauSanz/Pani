@@ -37,6 +37,20 @@ class PacientsController extends Controller {
     }
 
     public function afegirPacientAction(Request $req) {
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
         $pacient = new Client();
         $form = $this->createFormBuilder($pacient)
                 ->add('dni', TextType::class, array('label' => 'DNI'))
@@ -63,6 +77,20 @@ class PacientsController extends Controller {
     }
 
     public function modificarPacientAction($dni, Request $req) {
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
 
         $em = $this->getDoctrine()->getEntityManager();
         $pacients = $em->getRepository("clinicaPaniBundle:Client");
@@ -105,6 +133,20 @@ class PacientsController extends Controller {
     }
 
     public function eliminarPacientAction($dni) {
+        //Comprovar si existeix sessió
+        if ($this->get('session')->isStarted()) {
+            
+        } else {
+            $session = new Session();
+            $session->start();
+        }
+        $session = $this->get('session');
+        //Comprovar si estas logejat
+        if ($session->has('username')) {
+            
+        } else {
+            return $this->redirectToRoute('login');
+        }
 
         $em = $this->getDoctrine()->getEntityManager();
         $pacients = $em->getRepository("clinicaPaniBundle:Client");
