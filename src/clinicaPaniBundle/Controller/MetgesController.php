@@ -52,6 +52,10 @@ class MetgesController extends Controller {
         } else {
             return $this->redirectToRoute('login');
         }
+        if ($session->get('rol') < 99) {
+            return $this->redirectToRoute('clinica_pani_homepage');
+        }
+
         $metge = new Metge();
         $form = $this->createFormBuilder($metge)
                 ->add('dni', TextType::class, array('label' => 'DNI'))
@@ -92,6 +96,9 @@ class MetgesController extends Controller {
             
         } else {
             return $this->redirectToRoute('login');
+        }
+        if ($session->get('rol') < 99) {
+            return $this->redirectToRoute('clinica_pani_homepage');
         }
         $em = $this->getDoctrine()->getEntityManager();
         $metges = $em->getRepository("clinicaPaniBundle:Metge");
@@ -149,6 +156,9 @@ class MetgesController extends Controller {
             
         } else {
             return $this->redirectToRoute('login');
+        }
+        if ($session->get('rol') < 99) {
+            return $this->redirectToRoute('clinica_pani_homepage');
         }
         $em = $this->getDoctrine()->getEntityManager();
         $metges = $em->getRepository("clinicaPaniBundle:Metge");
